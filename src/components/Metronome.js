@@ -5,6 +5,12 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 import { Howl, Howler } from 'howler'
 
 function Metronome() {
+  
+  return (
+  <React.Fragment>
+    <p> hi </p>
+  </React.Fragment>
+  )
 
 }
 

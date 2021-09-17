@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Metronome from './Metronome'
 
-ffunction App() {
+function App() {
   return (
     <>
       <Metronome />
