@@ -3,15 +3,26 @@ import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { render } from '@testing-library/react';
 import Vex from 'vexflow'
-
+import Canvas from './Canvas';
 
 
 function MusicControl() {
 
+  const draw = ctx => {
+    ctx.fillStyle = '#000000'
+    ctx.beginPath()
+    ctx.moveTo(50,0)
+    ctx.arc(50, 100, 20, 0, 2*Math.PI)
+    ctx.fill()
+  }
+
+
+
 
 return (
       <div>
-        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+        <Canvas draw={draw} />
+        <button>draw a line</button>
       </div>
   )
 }
