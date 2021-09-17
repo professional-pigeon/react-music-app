@@ -35,13 +35,18 @@ class Metronome extends React.Component {
     })
   }
 
+  playMetronome = (sound, tempo) => {
+    sound.play()
+    setInterval(function(){sound.play()}, (60000 / tempo))
+  }
+
   render() {
-    let displayTempo = this.state.tempo
+    let useTempo = this.state.tempo
     return (
     <React.Fragment>
-      <p>{displayTempo}</p>
+      <p>{useTempo}</p>
       <button onClick={() => this.upTempo()}>add tempo</button>
-      <button onClick={() => this.lowBlock.play()}>Click to hear a block</button>
+      <button onClick={() => this.playMetronome(this.lowBlock, useTempo)}>Click to hear a block</button>
       <button onClick={() => this.downTempo()}>subtract tempo</button>
     </React.Fragment>
     )
@@ -49,3 +54,4 @@ class Metronome extends React.Component {
 }
 
 export default Metronome;
+
