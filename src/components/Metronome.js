@@ -3,24 +3,28 @@ import { Row, Col, Container } from 'react-bootstrap'
 import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image'
 import { Howl, Howler } from 'howler'
+import noise from "../sounds/Low-Wood-Block.mp3"
 
-function Metronome() {
+class Metronome extends React.Component {
 
-  let highBlockSound = new Howl({
-    src: ["./sounds/High-Wood-Block.mp3"]
-  });
-
-  let lowBlockSound = new Howl({
-    src: ["./sounds/Low-Wood-Block.mp3"],
+  audio = new Howl({
+    src: noise,
     volume: 1.0,
   });
 
-  return (
-  <React.Fragment>
-    <button onClick={() => lowBlockSound.play()}>Click to hear a block</button>
-  </React.Fragment>
-  )
+  playAudio = (sound) => {
+    console.log("play")
+    sound.play()
+  }
 
+
+  render() {
+    return (
+    <React.Fragment>
+      <button onClick={() => this.playAudio(this.audio)}>Click to hear a block</button>
+    </React.Fragment>
+    )
+  }
 }
 
 export default Metronome;
