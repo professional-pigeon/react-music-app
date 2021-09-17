@@ -2,27 +2,20 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { render } from '@testing-library/react';
-import Vex from 'vexflow'
-import Canvas from './Canvas';
+
 
 
 function MusicControl() {
 
-  const draw = ctx => {
-    ctx.fillStyle = '#000000'
-    ctx.beginPath()
-    ctx.moveTo(50,0)
-    ctx.arc(50, 100, 20, 0, 2*Math.PI)
-    ctx.fill()
-  }
-
-
-
-
 return (
       <div>
-        <Canvas draw={draw} />
-        <button>draw a line</button>
+        <svg width={1000} height={500}>
+          <line x1={10} y1={10} x2={500} y2={10} style={stroke: black}></line>
+          <line x1={10} y1={20} x2={500} y2={20} style={stroke: black}></line>
+          <line x1={10} y1={30} x2={500} y2={30} style={stroke: black}></line>
+          <line x1={10} y1={40} x2={500} y2={40} style={stroke: black}></line>
+          <line x1={10} y1={50} x2={500} y2={50} style={stroke: black}></line>
+        </svg>
       </div>
   )
 }

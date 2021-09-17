@@ -3,9 +3,6 @@ import Metronome from './Metronome'
 import DrawControl from './DrawControl'
 
 function App() {
-
-
-
   return (
     <>
       <Metronome />
