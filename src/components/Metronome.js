@@ -7,21 +7,42 @@ import noise from "../sounds/Low-Wood-Block.mp3"
 
 class Metronome extends React.Component {
 
-  audio = new Howl({
+  constructor(props) {
+    super(props)
+    this.state = {
+      tempo: 100
+    }
+  }
+
+  lowBlock = new Howl({
     src: noise,
     volume: 1.0,
   });
 
-  playAudio = (sound) => {
-    console.log("play")
-    sound.play()
+  upTempo = () => {
+    let newTempo = this.state.tempo
+    newTempo++
+    this.setState({
+      tempo: newTempo
+    })
   }
 
+  downTempo = () => {
+    let newTempo = this.state.tempo
+    newTempo--
+    this.setState({
+      tempo: newTempo
+    })
+  }
 
   render() {
+    let displayTempo = this.state.tempo
     return (
     <React.Fragment>
-      <button onClick={() => this.playAudio(this.audio)}>Click to hear a block</button>
+      <p>{displayTempo}</p>
+      <button onClick={() => this.upTempo()}>add tempo</button>
+      <button onClick={() => this.lowBlock.play()}>Click to hear a block</button>
+      <button onClick={() => this.downTempo()}>subtract tempo</button>
     </React.Fragment>
     )
   }
