@@ -46,10 +46,16 @@ class Metronome extends React.Component {
     })
     if (playingState) {
       interval = setInterval(function(){sound.play()}, (60000 / tempo))
+      this.setState({
+        intervalID: interval
+      })
       console.log(interval)
     } else {
       console.log("it got here")
       clearInterval(interval);
+      this.setState({
+        intervalID: 0
+      })
       console.log(interval)
     }
   }
@@ -61,7 +67,7 @@ class Metronome extends React.Component {
     <React.Fragment>
       <p>{useTempo}</p>
       <button onClick={() => this.upTempo()}>add tempo</button>
-      <button onClick={() => this.playMetronome(this.lowBlock, useTempo, playState, this.interval)}>{this.state.playing ? "stop music" : "play music"}</button>
+      <button onClick={() => this.playMetronome(this.lowBlock, useTempo, playState, this.state.intervalID)}>{this.state.playing ? "stop music" : "play music"}</button>
       <button onClick={() => this.downTempo()}>subtract tempo</button>
     </React.Fragment>
     )
