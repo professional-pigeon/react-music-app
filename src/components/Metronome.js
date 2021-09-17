@@ -10,9 +10,13 @@ class Metronome extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tempo: 100
+      tempo: 100,
+      playing: false,
+      intervalID: 0
     }
   }
+
+  interval = ""
 
   lowBlock = new Howl({
     src: noise,
@@ -35,18 +39,29 @@ class Metronome extends React.Component {
     })
   }
 
-  playMetronome = (sound, tempo) => {
-    sound.play()
-    setInterval(function(){sound.play()}, (60000 / tempo))
+  playMetronome = (sound, tempo, playingState, interval) => {
+    playingState = !playingState
+    this.setState({
+      playing: playingState
+    })
+    if (playingState) {
+      interval = setInterval(function(){sound.play()}, (60000 / tempo))
+      console.log(interval)
+    } else {
+      console.log("it got here")
+      clearInterval(interval);
+      console.log(interval)
+    }
   }
 
   render() {
     let useTempo = this.state.tempo
+    let playState = this.state.playing
     return (
     <React.Fragment>
       <p>{useTempo}</p>
       <button onClick={() => this.upTempo()}>add tempo</button>
-      <button onClick={() => this.playMetronome(this.lowBlock, useTempo)}>Click to hear a block</button>
+      <button onClick={() => this.playMetronome(this.lowBlock, useTempo, playState, this.interval)}>{this.state.playing ? "stop music" : "play music"}</button>
       <button onClick={() => this.downTempo()}>subtract tempo</button>
     </React.Fragment>
     )
