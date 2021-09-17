@@ -65,7 +65,7 @@ class Metronome extends React.Component {
     let playState = this.state.playing
     return (
     <React.Fragment>
-      <p>{useTempo}</p>
+      <p>Tempo in BPM: {useTempo}</p>
       <button onClick={() => this.upTempo()}>add tempo</button>
       <button onClick={() => this.playMetronome(this.lowBlock, useTempo, playState, this.state.intervalID)}>{this.state.playing ? "stop music" : "play music"}</button>
       <button onClick={() => this.downTempo()}>subtract tempo</button>
