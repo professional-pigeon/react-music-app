@@ -1,12 +1,12 @@
 import './App.css';
 import Metronome from './Metronome'
-import MusicControl from './MusicControl'
+import Canvas from './Canvas'
 
 function App() {
   return (
     <>
       <Metronome />
-      <MusicControl />
+      <Canvas />
     </>
   );
 }
