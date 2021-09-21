@@ -3,7 +3,9 @@ import { Row, Col, Container } from 'react-bootstrap'
 import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image'
 import { Howl, Howler } from 'howler'
-import noise from "../sounds/Low-Wood-Block.mp3"
+import SoundLibrary from './SoundLibrary'
+
+let soundObjects = SoundLibrary()
 
 class Metronome extends React.Component {
 
@@ -18,10 +20,11 @@ class Metronome extends React.Component {
 
   interval = ""
 
-  lowBlock = new Howl({
-    src: noise,
-    volume: 1.0,
-  });
+
+  // lowBlock = new Howl({
+  //   src: noise,
+  //   volume: 1.0,
+  // });
 
   upTempo = () => {
     let newTempo = this.state.tempo
@@ -45,13 +48,13 @@ class Metronome extends React.Component {
       playing: playingState
     })
     if (playingState) {
-      interval = setInterval(function(){sound.play()}, (60000 / tempo))
+      console.log(soundObjects)
+      interval = setInterval(function(){soundObjects.lowBlock.play()}, (60000 / tempo))
       this.setState({
         intervalID: interval
       })
       console.log(interval)
     } else {
-      console.log("it got here")
       clearInterval(interval);
       this.setState({
         intervalID: 0
