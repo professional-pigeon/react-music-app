@@ -6,6 +6,7 @@ import { Howl, Howler } from 'howler'
 import SoundLibrary from './SoundLibrary'
 
 let soundObjects = SoundLibrary()
+let drumMachine = soundObjects.drumMachine
 
 class Metronome extends React.Component {
 
@@ -48,13 +49,12 @@ class Metronome extends React.Component {
       playing: playingState
     })
     if (playingState) {
-      console.log(soundObjects)
-      interval = setInterval(function(){soundObjects.lowBlock.play()}, (60000 / tempo))
+      interval = setInterval(function(){sound.play('clap')}, (60000 / tempo))
       this.setState({
         intervalID: interval
       })
-      console.log(interval)
     } else {
+
       clearInterval(interval);
       this.setState({
         intervalID: 0
@@ -64,13 +64,14 @@ class Metronome extends React.Component {
   }
 
   render() {
+    console.log(soundObjects.drumMachine.sprite)
     let useTempo = this.state.tempo
     let playState = this.state.playing
     return (
     <React.Fragment>
       <p>Tempo in BPM: {useTempo}</p>
       <button onClick={() => this.upTempo()}>add tempo</button>
-      <button onClick={() => this.playMetronome(this.lowBlock, useTempo, playState, this.state.intervalID)}>{this.state.playing ? "stop music" : "play music"}</button>
+      <button onClick={() => this.playMetronome(drumMachine, useTempo, playState, this.state.intervalID)}>{this.state.playing ? "stop music" : "play music"}</button>
       <button onClick={() => this.downTempo()}>subtract tempo</button>
     </React.Fragment>
     )
