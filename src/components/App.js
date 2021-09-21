@@ -1,12 +1,12 @@
 import './App.css';
-import Metronome from './Metronome'
+import SoundControl from './SoundControl'
 import DrawControl from './DrawControl'
 
 function App() {
   return (
     <>
-      <Metronome />
-      <DrawControl />
+      <SoundControl />
+      {/* <DrawControl /> */}
     </>
   );
 }

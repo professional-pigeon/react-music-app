@@ -8,7 +8,7 @@ import SoundLibrary from './SoundLibrary'
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
 
-class Metronome extends React.Component {
+class SoundControl extends React.Component {
 
   constructor(props) {
     super(props)
@@ -74,7 +74,6 @@ class Metronome extends React.Component {
 
   handleChange(event) {
     event.preventDefault();
-    console.log("this happens")
   }
 
   render() {
@@ -106,7 +105,7 @@ class Metronome extends React.Component {
   }
 }
 
-export default Metronome;
+export default SoundControl;
 
 // cowbell: [0, 300],
 // conga_hi: [400, 300],
