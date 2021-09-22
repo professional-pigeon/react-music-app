@@ -14,35 +14,27 @@ class SoundControl extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
+    this.state = { 
       tempo: 100,
       playing: false,
       intervalID: 0,
-      instrument: ["clap", "tom_low", "cowbell"],
+      instrument: ["clap"],
       beats: 4
     }
     this.handleChange = this.handleChange.bind(this);
     this.changeInstrument = this.changeInstrument.bind(this);
   }
 
-  // let arrayOfNotes = [ 'cowbell', 'clave', 'tom-low', 'clave']
-  // let numberToChange = 0
-  // Tick = (arrayOfNotes, numberToChange) => {
-  //   drumMachine.play(arrayOfNotes[numberToChange])
-  //   return numberToChange++
+  setTempo = (number) => {
+    let newTempo = number
+    this.setState({ tempo: newTempo })
+  }
+
+  // downTempo = () => {
+  //   let newTempo = this.state.tempo
+  //   newTempo--
+  //   this.setState({ tempo: newTempo })
   // }
-
-  upTempo = () => {
-    let newTempo = this.state.tempo
-    newTempo++
-    this.setState({ tempo: newTempo })
-  }
-
-  downTempo = () => {
-    let newTempo = this.state.tempo
-    newTempo--
-    this.setState({ tempo: newTempo })
-  }
 
   setPlayState = (playingState) => {
     playingState = !playingState
@@ -83,9 +75,8 @@ class SoundControl extends React.Component {
     <React.Fragment>
       <Player
         useTempo={this.state.tempo} 
-        upTempo={this.upTempo} 
-        downTempo={this.downTempo} 
-        playMusic={this.playMusic} 
+        playMusic={this.playMusic}
+        setNewTempo={this.setTempo}
         sound={this.state.instrument} 
         interval={this.state.intervalID}
         playState={this.state.playing}
@@ -102,43 +93,23 @@ class SoundControl extends React.Component {
 
 export default SoundControl;
 
-setInterval(Tick(), (60000 / tempo)
-function fun(number) {
-  number++
-  return number
-}
-function createInterval(fun, dynamicParameter, interval)
- { setInterval(function() { fun(dynamicParameter); }, interval); }
- 
- Then call it as createInterval(funca,dynamicValue,500);
+//  const module = {
+//   n: 0,
+//   upN: function () {
+//   console.log(this.n)
+//   this.n = this.n +1
+//   return this.n
+//   }
+// }
 
-
-let n = 0
-function fun(n) {
-  n = n + 1
-    console.log(n)
-  return n
-}
-function createInterval(fun, dynamicParameter, interval)
- { setInterval(function() { fun(dynamicParameter); }, interval); }
-
- const module = {
-  n: 0,
-  upN: function () {
-  console.log(this.n)
-  this.n = this.n +1
-  return this.n
-  }
-}
-
-const unboundN = module.upN
-const getN = unboundN.bind(module)
-let arr = ["this", "that", "the other", "This", "Is", "Great"]
-playThing(getN, arr) {
-  n = getN()
-  console.log(arr[n])
-}
-function createInterval(playThing, arrayOfThings, getN, interval)
-{ setInterval(function() { playThing(getN, arrayOfThings); }, interval); }
+// const unboundN = module.upN
+// const getN = unboundN.bind(module)
+// let arr = ["this", "that", "the other", "This", "Is", "Great"]
+// playThing(getN, arr) {
+//   n = getN()
+//   console.log(arr[n])
+// }
+// function createInterval(playThing, arrayOfThings, getN, interval)
+// { setInterval(function() { playThing(getN, arrayOfThings); }, interval); }
 
 
