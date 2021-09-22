@@ -6,6 +6,9 @@ import { Howl, Howler } from 'howler'
 import SoundLibrary from './SoundLibrary'
 import Player from './Player'
 import InstrumentForm from './InstrumentForm'
+import SetPlayInterval from './SetPlayInterval'
+
+
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -18,23 +21,22 @@ class SoundControl extends React.Component {
       tempo: 100,
       playing: false,
       intervalID: 0,
-      instrument: ["clap"],
+      instrument: ["clap", "clave", "clap", "tom_low"],
       beats: 4
     }
+
     this.handleChange = this.handleChange.bind(this);
     this.changeInstrument = this.changeInstrument.bind(this);
   }
+
+  
+
+  
 
   setTempo = (number) => {
     let newTempo = number
     this.setState({ tempo: newTempo })
   }
-
-  // downTempo = () => {
-  //   let newTempo = this.state.tempo
-  //   newTempo--
-  //   this.setState({ tempo: newTempo })
-  // }
 
   setPlayState = (playingState) => {
     playingState = !playingState
@@ -67,14 +69,14 @@ class SoundControl extends React.Component {
 
   render() {
     console.log(soundObjects.drumMachine.sprite)
-    // let useTempo = this.state.tempo
+    let useTempo = this.state.tempo
     // let playState = this.state.playing
     let playInstrument = this.state.instrument
     console.log(playInstrument)
     return (
     <React.Fragment>
       <Player
-        useTempo={this.state.tempo} 
+        useTempo={useTempo} 
         playMusic={this.playMusic}
         setNewTempo={this.setTempo}
         sound={this.state.instrument} 
@@ -86,17 +88,20 @@ class SoundControl extends React.Component {
         playInstrument2={playInstrument}
         changeInstrument={this.changeInstrument}
       />
+      <button onClick={() => SetPlayInterval(playInstrument, useTempo, drumMachine)}>Text</button>
     </React.Fragment>
     )
   }
 }
+
+
+
 
 export default SoundControl;
 
 //  const module = {
 //   n: 0,
 //   upN: function () {
-//   console.log(this.n)
 //   this.n = this.n +1
 //   return this.n
 //   }
@@ -104,10 +109,10 @@ export default SoundControl;
 
 // const unboundN = module.upN
 // const getN = unboundN.bind(module)
-// let arr = ["this", "that", "the other", "This", "Is", "Great"]
-// playThing(getN, arr) {
+
+// playThing(arr) {
 //   n = getN()
-//   console.log(arr[n])
+//   drumMachine.play(arr[n])
 // }
 // function createInterval(playThing, arrayOfThings, getN, interval)
 // { setInterval(function() { playThing(getN, arrayOfThings); }, interval); }
