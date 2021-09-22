@@ -3,16 +3,18 @@ import React from 'react'
 function InstrumentForm(props) {
 
 
-  function handleInstrumentChange(event) {
+  function handleInstrumentAdd(event) {
     event.preventDefault();
-    let newInstrument = event.target.value
+    let newInstrument = event.target.instrument.value
+    console.log(newInstrument)
     props.changeInstrument(newInstrument);
   }
 
 return (
-    <form>
+  <div>
+    <form onSubmit={handleInstrumentAdd}>
       <label>Pick a sound:
-        <select value={props.playInstrument2} onChange={handleInstrumentChange}>
+        <select name="instrument">
           <option selected value="clap">Clap</option>
           <option value="cowbell">Cowbell</option>
           <option value="cymbal">Cymbal</option>
@@ -31,7 +33,10 @@ return (
           <option value="kick">Kick</option>
         </select>
       </label>
+      <button type="submit">Add too loop</button>
     </form>
+    <button onClick={()=> props.resetLoop()}>Reset Loop</button>
+    </div>
   )
 }
 

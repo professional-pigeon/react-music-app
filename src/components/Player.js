@@ -17,7 +17,6 @@ function Player(props) {
         <input type="number" name="tempo" />
         <button type="submit">Change Tempo</button>
       </form>
-      <button onClick={() => props.playMusic(props.sound, props.useTempo, props.playState, props.interval)}>Stop or Play music</button>
     </div>
   )
 

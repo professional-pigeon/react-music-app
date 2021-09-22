@@ -13,7 +13,6 @@ function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
         this.n = 0
         return this.n
       }
-
     }
     const unboundN = module.upN
     const getN = unboundN.bind(module)
@@ -22,19 +21,18 @@ function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
     
     let playSoundAtInterval = (arr) => {
       let n = getN() - 1
-      if (n > 3)  {
+      drumMachine.play(arr[n])
+      if (n > arr.length -2 )  {
         n = resetN()
       }
-      console.log(n)
-      drumMachine.play(arr[n])
     }
   
-    setInterval(function() { 
+    let intervalID = setInterval(function() { 
       playSoundAtInterval(arrayOfSounds); 
       }, 
-      (60000 / tempo))
+      (60000 / (tempo * 2)))
 
-    return console.log("this happened should see ticker")
+    return intervalID
     
   }
 

@@ -2,13 +2,10 @@ import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image'
-import { Howl, Howler } from 'howler'
 import SoundLibrary from './SoundLibrary'
 import Player from './Player'
 import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
-
-
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -21,17 +18,25 @@ class SoundControl extends React.Component {
       tempo: 100,
       playing: false,
       intervalID: 0,
-      instrument: ["clap", "clave", "clap", "tom_low"],
+      instrument: ['clap', 'tom_low', 'clap', '', 'clap', 'tom_hi', 'clap', ''],
       beats: 4
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.changeInstrument = this.changeInstrument.bind(this);
+    this.addInstrument = this.addInstrument.bind(this);
   }
 
-  
+  setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
+    let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
+    console.log(n)
+    this.setState({ intervalID: n })
+  }
 
-  
+  clearTheInterval = (id) => {
+    console.log(id)
+    clearInterval(id)
+    this.setState({ intervalID: 0 })
+  }
 
   setTempo = (number) => {
     let newTempo = number
@@ -44,22 +49,13 @@ class SoundControl extends React.Component {
     return playingState
   }
 
-  playMusic = (sound, tempo, playingState, interval) => {
-    let newState = this.setPlayState(playingState)
-    if (newState) {
-      interval = setInterval(function(){ 
-        sound.forEach(noise => drumMachine.play(noise))
-      }, (60000 / tempo))
-      this.setState({ intervalID: interval })
-    } else {
-      clearInterval(interval);
-      this.setState({ intervalID: 0 })
-    }
-  }
-
-  changeInstrument(newInstrument) {
+  addInstrument(newInstrument) {
+    let instArray = this.state.instrument
+    console.log(instArray)
+    instArray.push(newInstrument)
+    instArray.push('')
     this.setState({
-      instrument: newInstrument
+      instrument: instArray
     })
   }
 
@@ -67,12 +63,13 @@ class SoundControl extends React.Component {
     event.preventDefault();
   }
 
+  resetLoop = () => {
+    this.setState({ instrument: [] })
+  }
+
   render() {
-    console.log(soundObjects.drumMachine.sprite)
     let useTempo = this.state.tempo
-    // let playState = this.state.playing
     let playInstrument = this.state.instrument
-    console.log(playInstrument)
     return (
     <React.Fragment>
       <Player
@@ -86,9 +83,11 @@ class SoundControl extends React.Component {
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument2={playInstrument}
-        changeInstrument={this.changeInstrument}
+        changeInstrument={this.addInstrument}
+        resetLoop={this.resetLoop}
       />
-      <button onClick={() => SetPlayInterval(playInstrument, useTempo, drumMachine)}>Text</button>
+      <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
+      <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>
     </React.Fragment>
     )
   }
