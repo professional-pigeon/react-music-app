@@ -4,8 +4,8 @@ function Player(props) {
 
   function handleTempoChange(event) {
     event.preventDefault();
-    let newTempo = event.target.name.value
-    props.changeTempo(newTempo);
+    let newTempo = event.target.tempo.value
+    props.setNewTempo(newTempo);
   }
 
 
