@@ -18,7 +18,7 @@ class SoundControl extends React.Component {
       tempo: 100,
       playing: false,
       intervalID: 0,
-      instrument: [],
+      instrument: ['','','','','','','','','','','','','','','',''],
       beats: 4
     }
 
