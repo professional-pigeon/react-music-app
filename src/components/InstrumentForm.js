@@ -7,7 +7,6 @@ function InstrumentForm(props) {
     event.preventDefault();
     let newInstrument = event.target.instrument.value
     let beat = event.target.beat.value
-    console.log(beat)
     props.addInstrument(newInstrument, beat);
   }
 

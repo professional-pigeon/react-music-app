@@ -21,7 +21,7 @@ function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
     
     let playSoundAtInterval = (arr) => {
       let n = getN() - 1
-      arr.forEach((element => drumMachine.play(element)))
+      arr[n].forEach((sound => drumMachine.play(sound)))
       if (n > arr.length -2 )  {
         n = resetN()
       }

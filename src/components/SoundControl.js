@@ -51,12 +51,16 @@ class SoundControl extends React.Component {
 
   addInstrumentToSpace(newInstrument, location) {
     let instArray = this.state.instrument
-    if (instArray[location][0] === "b") {
-      instArray[location-1][0] = newInstrument
-    } else {
-    instArray[location-1].push(newInstrument)
-    }
     console.log(instArray)
+    if (instArray[location-1][0] === "b") {
+      console.log("here")
+      instArray[location-1][0] = newInstrument
+      console.log(instArray)
+    } else {
+      console.log("where I want to be though")
+      instArray[location-1].push(newInstrument)
+      console.log(instArray)
+    }
     this.setState({
       instrument: instArray
     })
