@@ -70,14 +70,13 @@ class SoundControl extends React.Component {
       <Player
         useTempo={useTempo} 
         setNewTempo={this.setTempo}
-        sound={this.state.instrument} 
-
       />
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         resetLoop={this.resetLoop}
+        sounds={drumMachine}
       />
       <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
       <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>

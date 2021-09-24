@@ -18,28 +18,21 @@ function InstrumentForm(props) {
     return beatArray
   }
 
+  let sounds = ["cowbell", "conga_hi", "cymbal", "conga_mid", "conga_low", "hihat_open", "tom_hi", "maracas", "tom_mid", "hihat_closed", "tom_low", "clave", "clap", "snare", "rim", "kick"]
+
+  function addSounds(sounds) {
+    let soundArray = []
+    sounds.forEach(element => soundArray.push(<option value={element}>{element}</option>))
+    return soundArray
+  }
+
 return (
   <div>
     <p>A bar has 16 beats 4 quarters and 16 16ths. Choose the corresponding position in the beat structure to add a note.</p>
     <form onSubmit={handleInstrumentAdd}>
       <label>Pick a sound:
         <select name="instrument">
-          <option selected value="clap">Clap</option>
-          <option value="cowbell">Cowbell</option>
-          <option value="cymbal">Cymbal</option>
-          <option value="hihat_open">Hi-hat Open</option>
-          <option value="hihat_closed">Hi-hat Closed</option>
-          <option value="conga_hi"> Conga High</option>
-          <option value="conga_mid">Conga Mid</option>
-          <option value="conga_low">Conga Low</option>
-          <option value="maracas">Maracas</option>
-          <option value="clave">Clave</option>
-          <option value="tom_hi">Tom High</option>
-          <option value="tom_mid">Tom Mid</option>
-          <option value="tom_low">Tom Low</option>
-          <option value="snare">Snare</option>
-          <option value="rim">Rim</option>
-          <option value="kick">Kick</option>
+          {addSounds(sounds)}
         </select>
       <select name="beat">
           {addBeats(props.playInstrument.length)}
