@@ -23,7 +23,7 @@ class SoundControl extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.addInstrument = this.addInstrument.bind(this);
+    this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
   }
 
   setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
@@ -49,15 +49,15 @@ class SoundControl extends React.Component {
     return playingState
   }
 
-  addInstrument(newInstrument) {
+  addInstrumentToSpace(newInstrument, location) {
     let instArray = this.state.instrument
+    instArray[location-1] = newInstrument
     console.log(instArray)
-    instArray.push(newInstrument)
-    instArray.push('')
     this.setState({
       instrument: instArray
     })
   }
+
 
   handleChange(event) {
     event.preventDefault();
@@ -83,7 +83,7 @@ class SoundControl extends React.Component {
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument2={playInstrument}
-        changeInstrument={this.addInstrument}
+        addInstrument={this.addInstrumentToSpace}
         resetLoop={this.resetLoop}
       />
       <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>

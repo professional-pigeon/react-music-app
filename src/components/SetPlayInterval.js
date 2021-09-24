@@ -30,7 +30,7 @@ function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
     let intervalID = setInterval(function() { 
       playSoundAtInterval(arrayOfSounds); 
       }, 
-      (60000 / (tempo * 2)))
+      (60000 / (tempo * 4)))
 
     return intervalID
     

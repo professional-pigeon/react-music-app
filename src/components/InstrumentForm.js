@@ -6,8 +6,9 @@ function InstrumentForm(props) {
   function handleInstrumentAdd(event) {
     event.preventDefault();
     let newInstrument = event.target.instrument.value
-    console.log(newInstrument)
-    props.changeInstrument(newInstrument);
+    let beat = event.target.beat.value
+    console.log(beat)
+    props.addInstrument(newInstrument, beat);
   }
 
 return (
@@ -33,13 +34,12 @@ return (
           <option value="rim">Rim</option>
           <option value="kick">Kick</option>
         </select>
-      <select name="space">
-      <option selected value="clap">Clap</option>
+      <select name="beat">
           <option value="1">1</option>
           <option value="2">2 (1-e)</option>
           <option value="3">3 (1-and)</option>
           <option value="4">4 (1-uh</option>
-          <option value="5"> 5</option>
+          <option value="5">5</option>
           <option value="6">6</option>
           <option value="7">7</option>
           <option value="8">8</option>
