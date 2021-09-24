@@ -18,7 +18,7 @@ class SoundControl extends React.Component {
       tempo: 100,
       playing: false,
       intervalID: 0,
-      instrument: ['','','','','','','','','','','','','','','',''],
+      instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']],
       beats: 4
     }
 
@@ -51,7 +51,11 @@ class SoundControl extends React.Component {
 
   addInstrumentToSpace(newInstrument, location) {
     let instArray = this.state.instrument
-    instArray[location-1] = newInstrument
+    if (instArray[location][0] === "b") {
+      instArray[location-1][0] = newInstrument
+    } else {
+    instArray[location-1].push(newInstrument)
+    }
     console.log(instArray)
     this.setState({
       instrument: instArray
@@ -64,7 +68,7 @@ class SoundControl extends React.Component {
   }
 
   resetLoop = () => {
-    this.setState({ instrument: [] })
+    this.setState({ instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']] })
   }
 
   render() {
