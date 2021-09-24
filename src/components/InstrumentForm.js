@@ -53,3 +53,6 @@ InstrumentForm.propTypes ={
   }
 
 export default InstrumentForm
+
+// Play math not using setInterval
+

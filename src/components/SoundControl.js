@@ -6,6 +6,7 @@ import SoundLibrary from './SoundLibrary'
 import Player from './Player'
 import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
+import NoteVisual from './NoteVisual'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -71,6 +72,8 @@ class SoundControl extends React.Component {
         useTempo={useTempo} 
         setNewTempo={this.setTempo}
       />
+      <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
+      <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}
@@ -78,8 +81,7 @@ class SoundControl extends React.Component {
         resetLoop={this.resetLoop}
         sounds={drumMachine}
       />
-      <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
-      <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>
+      <NoteVisual />
     </React.Fragment>
     )
   }
