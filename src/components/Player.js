@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types"
 
 function Player(props) {
 
@@ -19,9 +20,12 @@ function Player(props) {
       </form>
     </div>
   )
-
 }
 
-export default Player
+Player.propTypes ={
+  useTempo: PropTypes.number,
+  setNewTempo: PropTypes.func,
+  sound: PropTypes.array,
+  }
 
-{/* <select value={props.playInstrument2} onChange={handleInstrumentChange}> */}
+export default Player

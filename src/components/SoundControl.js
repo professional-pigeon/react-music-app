@@ -16,7 +16,7 @@ class SoundControl extends React.Component {
     super(props)
     this.state = { 
       tempo: 100,
-      playing: false,
+      // playing: false,
       intervalID: 0,
       instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']],
       beats: 4
@@ -43,11 +43,11 @@ class SoundControl extends React.Component {
     this.setState({ tempo: newTempo })
   }
 
-  setPlayState = (playingState) => {
-    playingState = !playingState
-    this.setState({ playing: playingState })
-    return playingState
-  }
+  // setPlayState = (playingState) => {
+  //   playingState = !playingState
+  //   this.setState({ playing: playingState })
+  //   return playingState
+  // }
 
   addInstrumentToSpace(newInstrument, location) {
     let instArray = this.state.instrument
@@ -78,23 +78,19 @@ class SoundControl extends React.Component {
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
-    let barLength = playInstrument.length
     return (
     <React.Fragment>
       <Player
         useTempo={useTempo} 
-        playMusic={this.playMusic}
         setNewTempo={this.setTempo}
         sound={this.state.instrument} 
-        interval={this.state.intervalID}
         playState={this.state.playing}
       />
       <InstrumentForm 
         handleChange={this.handleChange}
-        playInstrument2={playInstrument}
+        playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         resetLoop={this.resetLoop}
-        beatsLength={barLength}
       />
       <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
       <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>
