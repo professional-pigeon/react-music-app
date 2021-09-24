@@ -12,6 +12,7 @@ function InstrumentForm(props) {
 
 return (
   <div>
+    <p>A bar has 16 beats 4 quarters and 16 16ths. Choose the corresponding position in the beat structure to add a note.</p>
     <form onSubmit={handleInstrumentAdd}>
       <label>Pick a sound:
         <select name="instrument">

@@ -98,22 +98,8 @@ class SoundControl extends React.Component {
 
 export default SoundControl;
 
-//  const module = {
-//   n: 0,
-//   upN: function () {
-//   this.n = this.n +1
-//   return this.n
-//   }
-// }
+// add 8th notes?
 
-// const unboundN = module.upN
-// const getN = unboundN.bind(module)
-
-// playThing(arr) {
-//   n = getN()
-//   drumMachine.play(arr[n])
-// }
-// function createInterval(playThing, arrayOfThings, getN, interval)
-// { setInterval(function() { playThing(getN, arrayOfThings); }, interval); }
+// right now adding only quarter notes and a blank 8th note space
 
 
