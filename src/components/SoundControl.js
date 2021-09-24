@@ -81,7 +81,9 @@ class SoundControl extends React.Component {
         resetLoop={this.resetLoop}
         sounds={drumMachine}
       />
-      <NoteVisual />
+      <NoteVisual 
+        playInstrument={playInstrument}
+        />
     </React.Fragment>
     )
   }
