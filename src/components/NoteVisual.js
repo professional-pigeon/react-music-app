@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Row } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 function NoteVisual(props) {
 
@@ -13,13 +13,23 @@ function NoteVisual(props) {
         }
       })
     })
-    return createRows(instruments)
+    return createRows(instruments, arrayOfNotes.length)
   }
 
-  function createRows(instruments) {
+  function createRows(instruments, beats) {
     let rowArray = []
+    let colArray = []
+    for (let i = 0; i <= beats; i++) {
+      colArray.push(<Col>Beat{i}</Col>)
+    }
+    console.log(colArray)
     instruments.forEach(function(instrument) {
-      rowArray.push(<Row>{instrument}</Row>)
+
+      rowArray.push(
+      <Row>
+        <Col>{instrument}</Col>
+        {colArray}
+      </Row>)
     })
     return rowArray
   }
