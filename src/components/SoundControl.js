@@ -18,7 +18,7 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']],
+      instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
       beats: 4
     }
 
@@ -63,6 +63,12 @@ class SoundControl extends React.Component {
     this.setState({ instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']] })
   }
 
+  addBeat = () => {
+    let newState = this.state.instrument
+    newState.push(["b"], ["b"], ["b"], ["b"])
+    this.setState({ instrument: newState})
+  }
+
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
@@ -74,6 +80,7 @@ class SoundControl extends React.Component {
       />
       <button onClick={() => this.setIntervalIDandPlay(playInstrument, useTempo, drumMachine)}>Start Music</button>
       <button onClick={() => this.clearTheInterval(this.state.intervalID)}>Stop music</button>
+      <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}
