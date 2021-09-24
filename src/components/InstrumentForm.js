@@ -2,7 +2,6 @@ import React from 'react'
 import SelectForm from './SelectForm'
 
 function InstrumentForm(props) {
-  let beats = props.beatsLength
 
   function handleInstrumentAdd(event) {
     event.preventDefault();
@@ -11,17 +10,16 @@ function InstrumentForm(props) {
     props.addInstrument(newInstrument, beat);
   }
 
-
-
   function addBeats(beats) {
     console.log(beats)
-    for (let b = 1; b === beats; b++) {
+    let beatarray = []
+    for (let b = 1; b <= beats; b++) {
       console.log("it got here")
-      return <option value={String(b)}>{b}</option>
+      beatarray.push(<option value={String(b)}>{b}</option>)
     }
+    console.log("it's now after the loop")
+    return beatarray
   }
-
-  let thing = addBeats(beats)
 
 return (
   <div>
@@ -47,7 +45,7 @@ return (
           <option value="kick">Kick</option>
         </select>
       <select name="beat">
-          {thing}
+          {addBeats(props.beatsLength)}
           {/* <option value="1">1</option>
           <option value="2">2 (1-e)</option>
           <option value="3">3 (1-and)</option>
