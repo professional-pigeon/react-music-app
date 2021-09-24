@@ -27,7 +27,6 @@ class SoundControl extends React.Component {
 
   setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
     let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
-    console.log(n)
     this.setState({ intervalID: n })
   }
 
@@ -42,23 +41,12 @@ class SoundControl extends React.Component {
     this.setState({ tempo: newTempo })
   }
 
-  // setPlayState = (playingState) => {
-  //   playingState = !playingState
-  //   this.setState({ playing: playingState })
-  //   return playingState
-  // }
-
   addInstrumentToSpace(newInstrument, location) {
     let instArray = this.state.instrument
-    console.log(instArray)
     if (instArray[location-1][0] === "b") {
-      console.log("here")
       instArray[location-1][0] = newInstrument
-      console.log(instArray)
     } else {
-      console.log("where I want to be though")
       instArray[location-1].push(newInstrument)
-      console.log(instArray)
     }
     this.setState({
       instrument: instArray
