@@ -9,7 +9,6 @@ function Player(props) {
     props.setNewTempo(newTempo);
   }
 
-
   return (
     <div>
       <p>Tempo in BPM: {props.useTempo}</p>

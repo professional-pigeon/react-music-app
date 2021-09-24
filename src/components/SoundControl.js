@@ -16,7 +16,6 @@ class SoundControl extends React.Component {
     super(props)
     this.state = { 
       tempo: 100,
-      // playing: false,
       intervalID: 0,
       instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']],
       beats: 4
@@ -84,7 +83,7 @@ class SoundControl extends React.Component {
         useTempo={useTempo} 
         setNewTempo={this.setTempo}
         sound={this.state.instrument} 
-        playState={this.state.playing}
+
       />
       <InstrumentForm 
         handleChange={this.handleChange}

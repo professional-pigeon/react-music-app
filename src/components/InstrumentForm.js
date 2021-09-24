@@ -10,15 +10,12 @@ function InstrumentForm(props) {
     props.addInstrument(newInstrument, beat);
   }
 
-  function addBeats(beats) {
-    console.log(beats)
-    let beatarray = []
-    for (let b = 1; b <= beats; b++) {
-      console.log("it got here")
-      beatarray.push(<option value={String(b)}>{b}</option>)
+  function addBeats(ticks) {
+    let beatArray = []
+    for (let b = 1; b <= ticks; b++) {
+      beatArray.push(<option value={String(b)}>{b}</option>)
     }
-    console.log("it's now after the loop")
-    return beatarray
+    return beatArray
   }
 
 return (
