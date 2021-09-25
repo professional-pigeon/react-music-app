@@ -8,7 +8,7 @@ function NoteVisual(props) {
     let instruments = []
     arrayOfNotes.forEach(function(instrumentList) {
       instrumentList.forEach(function(sound) {
-        if (instruments.includes(sound) === false) {
+        if (instruments.includes(sound) === false && sound != 'b') {
           instruments.push(sound)
         }
       })
@@ -22,12 +22,10 @@ function NoteVisual(props) {
       let colArray = []
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
-        console.log(checkArray)
-        console.log(instrument)
         if (checkArray.includes(instrument)) {
           colArray.push(<Col>{instrument}</Col>)
         } else {
-          colArray.push(<Col>No note</Col>)
+          colArray.push(<Col>x</Col>)
         }
       }
       rowArray.push(
