@@ -25,9 +25,9 @@ function NoteVisual(props) {
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
         if (checkArray.includes(instrument)) {
-          colArray.push(<Col sm="auto"><Button className="noteButton">X</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-primary">X</Button></Col>)
         } else {
-          colArray.push(<Col sm="auto"><Button className="noteButton">O</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-info">O</Button></Col>)
         }
       }
       rowArray.push(
