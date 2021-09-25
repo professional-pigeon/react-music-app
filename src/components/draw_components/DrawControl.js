@@ -1,10 +1,10 @@
 import React from 'react'
-import PropTypes from "prop-types"
-import { propTypes } from 'react-bootstrap/esm/Image';
-import { render } from '@testing-library/react';
+// import PropTypes from "prop-types"
+// import { propTypes } from 'react-bootstrap/esm/Image';
+// import { render } from '@testing-library/react';
 
 
-
+// eventual music ledger will be written in svg
 function MusicControl() {
 
 return (

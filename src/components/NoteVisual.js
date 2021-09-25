@@ -13,18 +13,23 @@ function NoteVisual(props) {
         }
       })
     })
-    return createRows(instruments, arrayOfNotes.length)
+    return createRows(instruments, arrayOfNotes)
   }
 
-  function createRows(instruments, beats) {
+  function createRows(instruments, arrayOfNotes) {
     let rowArray = []
-    let colArray = []
-    for (let i = 0; i <= beats; i++) {
-      colArray.push(<Col>Beat{i}</Col>)
-    }
-    console.log(colArray)
     instruments.forEach(function(instrument) {
-
+      let colArray = []
+      for (let i = 0; i < arrayOfNotes.length; i++) {
+        let checkArray = arrayOfNotes[i]
+        console.log(checkArray)
+        console.log(instrument)
+        if (checkArray.includes(instrument)) {
+          colArray.push(<Col>{instrument}</Col>)
+        } else {
+          colArray.push(<Col>No note</Col>)
+        }
+      }
       rowArray.push(
       <Row>
         <Col>{instrument}</Col>

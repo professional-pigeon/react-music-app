@@ -1,8 +1,4 @@
-import React from 'react'
-
-
 function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
-
     let module = {
       n: 0,
       upN: function() {
@@ -33,7 +29,6 @@ function SetPlayInterval(arrayOfSounds, tempo, drumMachine) {
       (60000 / (tempo * 4)))
 
     return intervalID
-    
   }
 
-  export default SetPlayInterval
+export default SetPlayInterval

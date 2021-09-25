@@ -19,6 +19,8 @@
 
 This is going to be a music notation app written in javascript and using react. At it's current iteration it is a drum machine. 
 
+This is also my capstone project for my coding school. I'm excited for any feedback or suggestions you may have as it takes shape.
+
 ## Setup/Installation Requirements
 
 * Download database from github repository [here] (https://github.com/professional-pigeon/react-music-app)
