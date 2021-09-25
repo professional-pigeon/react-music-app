@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
+import styled from 'styled-components'
+import './App.css'
 
 function NoteVisual(props) {
 
@@ -23,14 +25,14 @@ function NoteVisual(props) {
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
         if (checkArray.includes(instrument)) {
-          colArray.push(<Col>{instrument}</Col>)
+          colArray.push(<Col><Button>{instrument}</Button></Col>)
         } else {
-          colArray.push(<Col>x</Col>)
+          colArray.push(<Col><Button>x</Button></Col>)
         }
       }
       rowArray.push(
       <Row>
-        <Col>{instrument}</Col>
+        <Col className="LeftMostCol">{instrument}</Col>
         {colArray}
       </Row>)
     })
