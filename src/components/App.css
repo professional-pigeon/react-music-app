@@ -4,10 +4,9 @@
 
 .LeftMostCol {
   text-align: left;
-  margin-right: ;
 }
 
-Button {
+.noteButton {
   background-color: papayawhip;
   border: solid rgb(226, 165, 175) 2px;
 }
