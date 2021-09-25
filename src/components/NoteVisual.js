@@ -32,7 +32,7 @@ function NoteVisual(props) {
       }
       rowArray.push(
       <Row>
-        <Col className="LeftMostCol">{instrument}</Col>
+        <Col xs={1} className="LeftMostCol">{instrument}</Col>
         {colArray}
       </Row>)
     })
