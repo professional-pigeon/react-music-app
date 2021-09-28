@@ -17,8 +17,6 @@ function NoteVisual(props) {
     return createRows(instruments, arrayOfNotes)
   }
 
-  console.log(props)
-
   function createRows(instruments, arrayOfNotes) {
     let rowArray = []
     instruments.forEach(function(instrument) {

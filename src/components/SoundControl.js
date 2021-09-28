@@ -31,7 +31,6 @@ class SoundControl extends React.Component {
   }
 
   clearTheInterval = (id) => {
-    console.log(id)
     clearInterval(id)
     this.setState({ intervalID: 0 })
   }
@@ -60,7 +59,6 @@ class SoundControl extends React.Component {
     if (instArray[location].length === 0) {
       instArray[location].push("b")
     }
-    console.log(instArray[location])
     this.setState ({
       instrumenet: instArray
     })
@@ -82,7 +80,6 @@ class SoundControl extends React.Component {
   }
 
   render() {
-    console.log(this.removeInstrumentFromSpace)
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     return (
