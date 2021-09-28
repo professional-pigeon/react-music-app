@@ -22,6 +22,7 @@ class SoundControl extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
+    // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
   setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
@@ -40,17 +41,31 @@ class SoundControl extends React.Component {
     this.setState({ tempo: newTempo })
   }
 
-  addInstrumentToSpace(newInstrument, location) {
+  addInstrumentToSpace = (newInstrument, location) => {
     let instArray = this.state.instrument
-    if (instArray[location-1][0] === "b") {
-      instArray[location-1][0] = newInstrument
+    if (instArray[location][0] === "b") {
+      instArray[location][0] = newInstrument
     } else {
-      instArray[location-1].push(newInstrument)
+      instArray[location].push(newInstrument)
     }
     this.setState({
       instrument: instArray
     })
   }
+
+  removeInstrumentFromSpace = (instrumentToRemove, location) => {
+    let instArray = this.state.instrument
+    let thingToFilter = instArray[location]
+    instArray[location] = thingToFilter.filter(sound => sound != instrumentToRemove)
+    if (instArray[location].length === 0) {
+      instArray[location].push("b")
+    }
+    console.log(instArray[location])
+    this.setState ({
+      instrumenet: instArray
+    })
+  }
+
 
   handleChange(event) {
     event.preventDefault();
@@ -67,6 +82,7 @@ class SoundControl extends React.Component {
   }
 
   render() {
+    console.log(this.removeInstrumentFromSpace)
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     return (
@@ -88,6 +104,7 @@ class SoundControl extends React.Component {
       <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
+        removeInstrument={this.removeInstrumentFromSpace}
         />
     </React.Fragment>
     )
@@ -98,9 +115,3 @@ class SoundControl extends React.Component {
 
 
 export default SoundControl;
-
-// add 8th notes?
-
-// right now adding only quarter notes and a blank 8th note space
-
-

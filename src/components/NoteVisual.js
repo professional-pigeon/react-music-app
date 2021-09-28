@@ -17,6 +17,8 @@ function NoteVisual(props) {
     return createRows(instruments, arrayOfNotes)
   }
 
+  console.log(props)
+
   function createRows(instruments, arrayOfNotes) {
     let rowArray = []
     instruments.forEach(function(instrument) {
@@ -24,9 +26,9 @@ function NoteVisual(props) {
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
         if (checkArray.includes(instrument)) {
-          colArray.push(<Col sm="auto"><Button variant="outline-primary">X</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-primary" onClick={() => props.removeInstrument(instrument, i)}>X</Button></Col>)
         } else {
-          colArray.push(<Col sm="auto"><Button variant="outline-info" onClick={() => props.addInstrument(instrument, (i + 1))}>O</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-info" onClick={() => props.addInstrument(instrument, i)}>O</Button></Col>)
         }
       }
       rowArray.push(
@@ -45,8 +47,8 @@ return (
 )
 }
 
-NoteVisual.propTypes = {
+// NoteVisual.propTypes = {
 
-}
+// }
 
 export default NoteVisual
