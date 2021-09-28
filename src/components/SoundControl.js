@@ -20,7 +20,6 @@ class SoundControl extends React.Component {
       intervalID: 0,
       instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
     }
-
     this.handleChange = this.handleChange.bind(this);
     this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
   }
@@ -52,7 +51,6 @@ class SoundControl extends React.Component {
       instrument: instArray
     })
   }
-
 
   handleChange(event) {
     event.preventDefault();
@@ -89,6 +87,7 @@ class SoundControl extends React.Component {
       />
       <NoteVisual 
         playInstrument={playInstrument}
+        addInstrument={this.addInstrumentToSpace}
         />
     </React.Fragment>
     )

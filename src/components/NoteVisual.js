@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Row, Col, Button } from 'react-bootstrap'
-import styled from 'styled-components'
 import './App.css'
 
 function NoteVisual(props) {
@@ -27,7 +26,7 @@ function NoteVisual(props) {
         if (checkArray.includes(instrument)) {
           colArray.push(<Col sm="auto"><Button variant="outline-primary">X</Button></Col>)
         } else {
-          colArray.push(<Col sm="auto"><Button variant="outline-info">O</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-info" onClick={() => props.addInstrument(instrument, (i + 1))}>O</Button></Col>)
         }
       }
       rowArray.push(
