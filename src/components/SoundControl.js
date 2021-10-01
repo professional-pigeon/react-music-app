@@ -99,7 +99,7 @@ class SoundControl extends React.Component {
     osc.connect(mainGainNode)
     console.log(osc)
     osc.start();
-    osc.stop(6000)
+    osc.stop(1)
     console.log("here")
     return osc;
   }
@@ -107,7 +107,7 @@ class SoundControl extends React.Component {
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
-    console.log(noteFreq["B-3"])
+    console.log(noteFreq["A-6"])
     return (
     <React.Fragment>
       <Player
@@ -119,7 +119,7 @@ class SoundControl extends React.Component {
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-      <button onClick={() => this.playTone(noteFreq["B-3"])}>tone</button>
+      <button onClick={() => this.playTone(noteFreq["A-2"])}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
