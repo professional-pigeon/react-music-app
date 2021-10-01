@@ -81,6 +81,28 @@ class SoundControl extends React.Component {
     this.setState({ instrument: newState})
   }
 
+  playTone(freq) {
+    let audioContext = new window.AudioContext();
+    let osc = audioContext.createOscillator();
+    let gain = audioContext.createGain()
+    console.log(gain)
+  
+    // if (type == "custom") {
+    //   osc.setPeriodicWave(customWaveform);
+    // } else {
+    //   osc.type = type;
+    // }
+    osc.type = 'square';
+    osc.frequency.value = freq;
+
+    osc.connect(gain)
+    console.log(osc)
+    osc.start();
+    // osc.stop(60000)
+    console.log("here")
+    return osc;
+  }
+
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
@@ -96,7 +118,7 @@ class SoundControl extends React.Component {
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-
+      <button onClick={() => this.playTone(noteFreq["B-3"])}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}

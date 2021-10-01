@@ -30,6 +30,7 @@ function playTone(freq) {
 
   osc.frequency.value = freq;
   osc.start();
+  osc.stop(60000)
 
   return osc;
 }
