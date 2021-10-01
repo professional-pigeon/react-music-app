@@ -23,7 +23,7 @@ class SoundControl extends React.Component {
       instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
     }
     this.handleChange = this.handleChange.bind(this);
-    this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
+    // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
     // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
