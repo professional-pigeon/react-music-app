@@ -1,12 +1,15 @@
 function noteCreator(startingFrequency) {
-  let output = []
+  let output = {}
   let frequency = startingFrequency
   let i = 0
-  while (i < 4) {
+  let octave = 0
+  let noteArray = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",]
+  while (i < 53) {
     frequency = frequency * (Math.pow(2, (1/12)))
-    output.push(frequency)
+    output[noteArray[i]](frequency)
    	i++
   }
+  // lowest is A
   return output
 }
 
