@@ -1,16 +1,20 @@
 function noteCreator(startingFrequency) {
-  let output = {}
+  let output = { "A-0": startingFrequency }
   let frequency = startingFrequency
   let i = 0
   let octave = 0
+  let noteNum = 10
   let noteArray = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",]
-  while (i < 53) {
+  console.log(noteArray[noteNum] + "-" + octave)
+  while (i < 4) {
     frequency = frequency * (Math.pow(2, (1/12)))
-    output[noteArray[i]](frequency)
+    output[noteArray[noteNum] + "-" + octave] = (frequency)
+    if (noteNum === 11) {
+      noteNum = 0
+    } else {
+      noteNum++
+    }
    	i++
   }
-  // lowest is A
   return output
 }
-
-// this will get you a 53 note range by frequency in Hertz
