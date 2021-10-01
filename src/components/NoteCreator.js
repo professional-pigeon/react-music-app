@@ -5,7 +5,6 @@ function noteCreator(startingFrequency) {
   let octave = 0
   let noteNum = 10
   let noteArray = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",]
-  console.log(noteArray[noteNum] + "-" + octave)
   while (i < 97) {
     frequency = frequency * (Math.pow(2, (1/12)))
     output[noteArray[noteNum] + "-" + octave] = (frequency)
@@ -19,3 +18,5 @@ function noteCreator(startingFrequency) {
   }
   return output
 }
+
+export default noteCreator

@@ -7,9 +7,11 @@ import Player from './Player'
 import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
 import NoteVisual from './NoteVisual'
+import noteCreator from './NoteCreator'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
+let noteFreq = noteCreator(27.500)
 
 class SoundControl extends React.Component {
 
@@ -82,6 +84,7 @@ class SoundControl extends React.Component {
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
+    console.log(noteFreq["B-3"])
     return (
     <React.Fragment>
       <Player
