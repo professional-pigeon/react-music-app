@@ -8,7 +8,7 @@ function Player(props) {
     let newTempo = event.target.tempo.value
     props.setNewTempo(newTempo);
   }
-
+  // play pause hook
   return (
     <div>
       <p>Tempo in BPM: {props.useTempo}</p>
@@ -16,6 +16,8 @@ function Player(props) {
         <label>Set Tempo:</label>
         <input type="number" name="tempo" />
         <button type="submit">Change Tempo</button>
+        <button onClick={() => props.play(props.playInstrument, props.useTempo, props.sounds)}>Start Music</button>
+        <button onClick={() => props.stop(props.intervalID)}>Stop music</button>
       </form>
     </div>
   )

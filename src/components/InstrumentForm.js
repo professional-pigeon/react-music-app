@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
+import { getDefaultNormalizer } from '@testing-library/dom';
 
 function InstrumentForm(props) {
 
@@ -56,3 +57,6 @@ export default InstrumentForm
 
 // Play math not using setInterval
 
+// Time is in ms
+
+// getTime() ((tempo * 1000) = second beat time - current time) (Tempo needs to contain all notes in it. so if Tempo is 2000, 8th notes occur on the 1000 ms, 16ths on the 500)

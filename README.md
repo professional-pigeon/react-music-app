@@ -42,3 +42,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Contact Information
 
 Kyle.KayPerez@gmail.com
+
+
+What are the next steps:
+1. update player view.
+
+1. Create sound library for other instruments, make addSound functions more flexible
+  => Will take some time, maybe plan to make your own sound sprites.
+2. Explore options for data visualization.
+3. 
