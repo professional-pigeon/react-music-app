@@ -6,20 +6,22 @@ function Player(props) {
   function handleTempoChange(event) {
     event.preventDefault();
     let newTempo = event.target.tempo.value
-    props.setNewTempo(newTempo);
+    // props.setNewTempo(newTempo);
   }
-  
-  let displayButton = (props.intervalID != 0 ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.useTempo, props.sounds)}>Start Music</button> )
+
+  let displayButton = (props.intervalID != 0 ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.useTempo, props.sounds)}>play</button> )
   
   return (
-    <div>
+    <div id="player">
       <p>Tempo in BPM: {props.useTempo}</p>
+      <div id="tempo-form">
       <form onSubmit={handleTempoChange}>
         <label>Set Tempo:</label>
         <input type="number" name="tempo" />
         <button type="submit">Change Tempo</button>
-        {displayButton}
       </form>
+      </div>
+      {displayButton}
     </div>
   )
 }
@@ -27,7 +29,7 @@ function Player(props) {
 Player.propTypes ={
   useTempo: PropTypes.number,
   setNewTempo: PropTypes.func,
-  sound: PropTypes.array,
+  sounds: PropTypes.array,
   }
 
 export default Player

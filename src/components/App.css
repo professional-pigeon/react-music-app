@@ -5,3 +5,34 @@
 .LeftMostCol {
   text-align: left;
 }
+
+#player {
+  position: relative;
+  margin: 2% 5% auto 5%;
+  width: 90%;
+  max-width: 500px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.664);
+}
+
+#player::before {
+  position: absolute;
+  content: '';
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(to left, #007db5, #ff8a00);
+  z-index: -1;
+}
+
+#play-icon {
+  position: relative;
+  margin: 20px 2.5% 20px 2.5%;
+}
+
+#tempo-form {
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
