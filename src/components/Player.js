@@ -6,7 +6,7 @@ function Player(props) {
   function handleTempoChange(event) {
     event.preventDefault();
     let newTempo = event.target.tempo.value
-    // props.setNewTempo(newTempo);
+    props.setNewTempo(newTempo);
   }
 
   let displayButton = (props.intervalID != 0 ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.useTempo, props.sounds)}>play</button> )

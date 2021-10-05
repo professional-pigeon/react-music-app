@@ -20,7 +20,7 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [ [ {drumMachine: 'tom_low'}], [ { piano: 'G2'} ]] 
+      instrument: [ [ {drumMachine: 'tom_low'}], [], [], [ { piano: 'G2'} ]] 
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
@@ -78,7 +78,7 @@ class SoundControl extends React.Component {
   }
 
   resetLoop = () => {
-    this.setState({ instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']] })
+    this.setState({ instrument: [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] })
   }
 
   addBeat = () => {
