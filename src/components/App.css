@@ -4,6 +4,13 @@
 
 .LeftMostCol {
   text-align: left;
+  width: ;
+}
+.together {
+  margin: 0;
+}
+.row{
+  --bs-gutter-x: 0 !important;
 }
 
 #player {

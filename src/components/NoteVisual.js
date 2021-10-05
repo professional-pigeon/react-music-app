@@ -24,13 +24,13 @@ function NoteVisual(props) {
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
         if (checkArray.includes(instrument)) {
-          colArray.push(<Col sm="auto"><Button variant="outline-primary" onClick={() => props.removeInstrument(instrument, i)}>X</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.removeInstrument(instrument, i)}></Button></Col>)
         } else {
-          colArray.push(<Col sm="auto"><Button variant="outline-info" onClick={() => props.addInstrument(instrument, i)}>O</Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onClick={() => props.addInstrument(instrument, i)}></Button></Col>)
         }
       }
       rowArray.push(
-      <Row>
+      <Row className="gutter" xs="auto">
         <Col xs={1} className="LeftMostCol">{instrument}</Col>
         {colArray}
       </Row>)

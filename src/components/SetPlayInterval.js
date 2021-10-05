@@ -46,6 +46,3 @@ function SetPlayInterval(arrayOfSounds, tempo, soundObject) {
   }
 
 export default SetPlayInterval
-
-Quarter notes: 1:1:1:1
-eigth notes: (1:1)
