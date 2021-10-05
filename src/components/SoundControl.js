@@ -20,17 +20,18 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [['tom_low'],['b'],['b'],['b'],['tom_low'],['clave'],['b'], ['b'], ['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
-      piano
+      instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
+      piano: [['G2'],['B3'],['C3'],['D3'],['G3'],['b'],['b'], ['b'], ['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']]
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
     // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
-  setIntervalIDandPlay = (playInstrument, useTempo, soundObject) => {
-    let n = SetPlayInterval(playInstrument, useTempo, soundObject)
-    this.setState({ intervalID: n })
+  setIntervalIDandPlay = (playInstrument, playPiano, useTempo) => {
+    let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
+    let x = SetPlayInterval(playPiano, useTempo, piano)
+    this.setState({ intervalID: [n, x] })
   }
 
   clearTheInterval = (id) => {
@@ -96,6 +97,7 @@ class SoundControl extends React.Component {
         stop={this.clearTheInterval}
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
+        playPiano={this.state.piano}
       />
       <button onClick={() => playOscillator(note)}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
