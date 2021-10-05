@@ -1,4 +1,4 @@
-function SetPlayInterval(arrayOfSounds, tempo, soundObjects) {
+function SetPlayInterval(arrayOfSounds, tempo, soundObject) {
     let module = {
       n: 0,
       upN: function() {
@@ -15,29 +15,27 @@ function SetPlayInterval(arrayOfSounds, tempo, soundObjects) {
     const unboundReset = module.resetN
     const resetN = unboundReset.bind(module)
     
-    // let playSoundAtInterval = (arr) => {
-    //   let n = getN() - 1
-    //   arr[n].forEach((sound => drumMachine.play(sound)))
-    //   if (n > arr.length -2 )  {
-    //     n = resetN()
-    //   }
-    // }
-
     let playSoundAtInterval = (arr) => {
       let n = getN() - 1
-      let soundHost = ""
-      let instrument = ""
-      arr[n].forEach(function (sound) {
-        soundHost = Object.keys(sound)
-        instrument = soundObjects[soundHost]
-        // console.log(instrument)
-        // console.log(sound[soundHost])
-        instrument.play(sound[soundHost])
-      })
+      arr[n].forEach((sound => soundObject.play(sound)))
       if (n > arr.length -2 )  {
         n = resetN()
       }
     }
+
+    // let playSoundAtInterval = (arr) => {
+    //   let n = getN() - 1
+    //   let soundHost = ""
+    //   let instrument = ""
+    //   arr[n].forEach(function (sound) {
+    //     soundHost = Object.keys(sound)
+    //     instrument = soundObjects[soundHost]
+    //     instrument.play(sound[soundHost])
+    //   })
+    //   if (n > arr.length -2 )  {
+    //     n = resetN()
+    //   }
+    // }
 
     let intervalID = setInterval(function() { 
       playSoundAtInterval(arrayOfSounds); 

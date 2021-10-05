@@ -20,23 +20,18 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [ [ {drumMachine: 'tom_low'}], [], [], [ { piano: 'G2'} ]] 
+      instrument: [['tom_low'],['b'],['b'],['b'],['tom_low'],['clave'],['b'], ['b'], ['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
+      piano
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
     // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
-  // setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
-  //   let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
-  //   this.setState({ intervalID: n })
-  // }
-
-  setIntervalIDandPlay = (playInstrument, useTempo, soundObjects) => {
-    let n = SetPlayInterval(playInstrument, useTempo, soundObjects)
+  setIntervalIDandPlay = (playInstrument, useTempo, soundObject) => {
+    let n = SetPlayInterval(playInstrument, useTempo, soundObject)
     this.setState({ intervalID: n })
   }
-
 
   clearTheInterval = (id) => {
     clearInterval(id)
@@ -78,7 +73,7 @@ class SoundControl extends React.Component {
   }
 
   resetLoop = () => {
-    this.setState({ instrument: [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] })
+    this.setState({ instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']] })
   }
 
   addBeat = () => {
@@ -96,13 +91,13 @@ class SoundControl extends React.Component {
       <Player
         useTempo={useTempo} 
         setNewTempo={this.setTempo}
-        sounds={soundObjects}
+        sounds={drumMachine}
         play={this.setIntervalIDandPlay}
         stop={this.clearTheInterval}
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-      <button onClick={() => piano.play('G2')}>tone</button>
+      <button onClick={() => playOscillator(note)}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
@@ -111,11 +106,11 @@ class SoundControl extends React.Component {
         resetLoop={this.resetLoop}
         sounds={drumMachine}
       />
-      {/* <NoteVisual 
+      <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
-        /> */}
+        />
     </React.Fragment>
     )
   }
