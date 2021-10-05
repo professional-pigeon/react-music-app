@@ -1,10 +1,14 @@
-import lowWoodBlock from "../sounds/Low-Wood-Block.mp3"
-import { Howl, Howler } from 'howler'
-import spriteSounds from "../sounds/sprite.mp3"
+import lowWoodBlock from "../../sounds/Low-Wood-Block.mp3"
+import { Howl } from 'howler'
+import spriteSounds from "../../sounds/sprite.mp3"
+import noteCreator from "./NoteCreator"
+
+let noteFreq = noteCreator(27.500)
 
 function SoundLibrary() {
 
   return { 
+    frequency: noteFreq,
     lowBlock: new Howl({
     src: lowWoodBlock,
     volume: 1.0,

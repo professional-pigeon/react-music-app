@@ -1,17 +1,15 @@
 import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
 import PropTypes from "prop-types"
 import { propTypes } from 'react-bootstrap/esm/Image'
-import SoundLibrary from './SoundLibrary'
+import SoundLibrary from './sound_logic/SoundLibrary'
 import Player from './Player'
 import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
 import NoteVisual from './NoteVisual'
-import noteCreator from './NoteCreator'
+import noteCreator from './sound_logic/NoteCreator'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
-let noteFreq = noteCreator(27.500)
 
 class SoundControl extends React.Component {
 
@@ -107,7 +105,7 @@ class SoundControl extends React.Component {
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
-    console.log(noteFreq["A-6"])
+    let note = soundObjects.frequency["A-4"]
     return (
     <React.Fragment>
       <Player
@@ -119,7 +117,7 @@ class SoundControl extends React.Component {
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-      <button onClick={() => this.playTone(noteFreq["A-4"])}>tone</button>
+      <button onClick={() => this.playTone(note)}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
