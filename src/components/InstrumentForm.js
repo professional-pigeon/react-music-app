@@ -4,8 +4,6 @@ import { getDefaultNormalizer } from '@testing-library/dom';
 
 function InstrumentForm(props) {
 
-  console.log(Object.keys(props.piano._sprite))
-
   function handleInstrumentAdd(event) {
     event.preventDefault();
     let newInstrument = event.target.instrument.value

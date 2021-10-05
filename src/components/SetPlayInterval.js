@@ -19,7 +19,7 @@ function SetPlayInterval(arrayOfSounds, tempo, soundObject) {
       let n = getN() - 1
       arr[n].forEach(function(sound) {
         if (sound !== undefined)
-         soundObject.play(sound)
+          soundObject.play(sound)
         })
       if (n > arr.length -2 )  {
         n = resetN()

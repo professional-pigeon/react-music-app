@@ -8,10 +8,8 @@ function playOscillator(freq) {
   osc.frequency.value = freq;
 
   osc.connect(mainGainNode)
-  console.log(osc)
   osc.start();
   osc.stop(.5)
-  console.log("here")
   return osc;
 }
 

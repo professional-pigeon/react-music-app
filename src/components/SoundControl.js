@@ -20,8 +20,8 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [['tom_low', 'G2', 'C3'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
-      // piano: [['G2'],['B3'],['C3'],['D3'],['G3'],['b'],['b'], ['b'], ['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']]
+      instrument: [['tom_low', 'G2', 'C3'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
+      piano: []
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
@@ -42,6 +42,11 @@ class SoundControl extends React.Component {
   setTempo = (number) => {
     let newTempo = number
     this.setState({ tempo: newTempo })
+  }
+
+  seePiano = (notes) => {
+    console.log(notes)
+    this.setState({ piano: notes })
   }
 
   addInstrumentToSpace = (newInstrument, location) => {
@@ -84,6 +89,7 @@ class SoundControl extends React.Component {
   }
 
   render() {
+    console.log(this.state.piano)
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     let note = soundObjects.frequency["A-4"]
@@ -113,6 +119,7 @@ class SoundControl extends React.Component {
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
+        seePiano={this.seePiano}
         />
     </React.Fragment>
     )
