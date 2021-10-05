@@ -8,6 +8,7 @@ import SetPlayInterval from './SetPlayInterval'
 import NoteVisual from './NoteVisual'
 import playOscillator from './Oscilator'
 import noteCreator from './sound_logic/NoteCreator'
+import PianoVisual from './PianoVisual'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -89,7 +90,6 @@ class SoundControl extends React.Component {
   }
 
   render() {
-    console.log(this.state.piano)
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     let note = soundObjects.frequency["A-4"]
@@ -120,7 +120,11 @@ class SoundControl extends React.Component {
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
         seePiano={this.seePiano}
+
         />
+      <PianoVisual
+        pianoNotes={piano} 
+      />
     </React.Fragment>
     )
   }
