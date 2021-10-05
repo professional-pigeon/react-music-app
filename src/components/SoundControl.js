@@ -20,7 +20,7 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
+      instrument: [['tom_low', 'G2', 'C3'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
       // piano: [['G2'],['B3'],['C3'],['D3'],['G3'],['b'],['b'], ['b'], ['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']]
     }
     this.handleChange = this.handleChange.bind(this);

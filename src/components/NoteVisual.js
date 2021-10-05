@@ -20,6 +20,7 @@ function NoteVisual(props) {
   function createRows(instruments, arrayOfNotes) {
     let rowArray = []
     instruments.forEach(function(instrument) {
+      if (instrument.length > 3) {
       let colArray = []
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
@@ -34,13 +35,39 @@ function NoteVisual(props) {
         <Col xs={1} className="LeftMostCol">{instrument}</Col>
         {colArray}
       </Row>)
-    })
+    }
+  })
     return rowArray
   }
 
+  function pianoNote(arrayOfNotes) {
+    let pianoNoteOnBeat = [];
+    let largeArray = []
+    for (let i = 0; i < arrayOfNotes.length; i++) {
+      arrayOfNotes[i].forEach(function(note) {
+        if (note.length < 4 && note !== 'b') {
+          pianoNoteOnBeat.push(note)
+        }
+      })
+      if (pianoNoteOnBeat[0] !== undefined) {
+        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected">{pianoNoteOnBeat}</Button></Col>)
+      } else {
+        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="selected">{pianoNoteOnBeat}</Button></Col>)
+      }
+      pianoNoteOnBeat = []
+      console.log(i)
+      console.log(largeArray)
+    }
+    return largeArray
+  }
+  console.log(pianoNote(props.playInstrument))
 return (
   <div>
-    <p>{createInstrumentList(props.playInstrument)}</p>
+    {createInstrumentList(props.playInstrument)}
+    <Row className="gutter" xs="auto">
+        <Col xs={1} className="LeftMostCol">Piano</Col>
+        {pianoNote(props.playInstrument)}
+    </Row>
   </div>
 )
 }
