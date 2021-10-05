@@ -4,12 +4,6 @@ function playOscillator(freq) {
   let mainGainNode = audioContext.createGain();
   mainGainNode.connect(audioContext.destination);
   mainGainNode.gain.value = 0.5
-
-  // if (type == "custom") {
-  //   osc.setPeriodicWave(customWaveform);
-  // } else {
-  //   osc.type = type;
-  // }
   osc.type = 'triangle';
   osc.frequency.value = freq;
 

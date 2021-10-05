@@ -6,10 +6,12 @@ import Player from './Player'
 import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
 import NoteVisual from './NoteVisual'
+import playOscillator from './Oscilator'
 import noteCreator from './sound_logic/NoteCreator'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
+let piano = soundObjects.piano
 
 class SoundControl extends React.Component {
 
@@ -18,17 +20,23 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: 0,
-      instrument: [['tom_low'],['b'],['b'],['b'],['clap'],['tom_low'],['clave'],['b'],['tom_low'],['b'],['b'],['b'],['clap'],['clave'],['b'],['clave']],
+      instrument: [ [ {drumMachine: 'tom_low'}], [ { piano: 'G2'} ]] 
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
     // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
-  setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
-    let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
+  // setIntervalIDandPlay = (playInstrument, useTempo, drumMachine) => {
+  //   let n = SetPlayInterval(playInstrument, useTempo, drumMachine)
+  //   this.setState({ intervalID: n })
+  // }
+
+  setIntervalIDandPlay = (playInstrument, useTempo, soundObjects) => {
+    let n = SetPlayInterval(playInstrument, useTempo, soundObjects)
     this.setState({ intervalID: n })
   }
+
 
   clearTheInterval = (id) => {
     clearInterval(id)
@@ -79,29 +87,6 @@ class SoundControl extends React.Component {
     this.setState({ instrument: newState})
   }
 
-  playTone(freq) {
-    let audioContext = new window.AudioContext();
-    let osc = audioContext.createOscillator();
-    let mainGainNode = audioContext.createGain();
-    mainGainNode.connect(audioContext.destination);
-    mainGainNode.gain.value = 0.5
-
-    // if (type == "custom") {
-    //   osc.setPeriodicWave(customWaveform);
-    // } else {
-    //   osc.type = type;
-    // }
-    osc.type = 'triangle';
-    osc.frequency.value = freq;
-
-    osc.connect(mainGainNode)
-    console.log(osc)
-    osc.start();
-    osc.stop(1)
-    console.log("here")
-    return osc;
-  }
-
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
@@ -111,13 +96,13 @@ class SoundControl extends React.Component {
       <Player
         useTempo={useTempo} 
         setNewTempo={this.setTempo}
-        sounds={drumMachine}
+        sounds={soundObjects}
         play={this.setIntervalIDandPlay}
         stop={this.clearTheInterval}
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-      <button onClick={() => this.playTone(note)}>tone</button>
+      <button onClick={() => piano.play('G2')}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
@@ -126,11 +111,11 @@ class SoundControl extends React.Component {
         resetLoop={this.resetLoop}
         sounds={drumMachine}
       />
-      <NoteVisual 
+      {/* <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
-        />
+        /> */}
     </React.Fragment>
     )
   }
