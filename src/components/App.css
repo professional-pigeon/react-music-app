@@ -9,8 +9,15 @@
 .together {
   margin: 0;
 }
-.row{
+
+.row {
   --bs-gutter-x: 0 !important;
+}
+
+.keys {
+  border: solid black 2px;
+  height: 100px;
+  width: 20px;
 }
 
 #player {

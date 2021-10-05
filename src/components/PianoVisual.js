@@ -6,8 +6,9 @@ function PianoVisual(props) {
   console.log(notes)
   let keys = []
   notes.forEach(function(note){
-    keys.push(<Col>{note}</Col>)
+    keys.push(<Col className="keys">{note}</Col>)
   })
+  
 
   return (
     <div id="keyboard">
