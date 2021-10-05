@@ -119,7 +119,7 @@ class SoundControl extends React.Component {
         intervalID={this.state.intervalID}
         playInstrument={playInstrument}
       />
-      <button onClick={() => this.playTone(noteFreq["A-2"])}>tone</button>
+      <button onClick={() => this.playTone(noteFreq["A-4"])}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
         handleChange={this.handleChange}
