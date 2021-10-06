@@ -9,7 +9,7 @@ function PianoVisual(props) {
     if (displayNotes.includes(note) === true) {
       keys.push(<Col className="keys-highlight">{note}</Col>)
     } else {
-      keys.push(<Col className="keys">{note}</Col>)
+      keys.push(<Col className="keys" onClick={()=> props.addNote(note, )}>{note}</Col>)
     }
   })
   
