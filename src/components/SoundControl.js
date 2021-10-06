@@ -49,6 +49,9 @@ class SoundControl extends React.Component {
   seePiano = (notes, i) => {
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
+  setBeat = (beat) => {
+    this.setState({ chosenBeat: beat })
+  }
 
   addInstrumentToSpace = (newInstrument, location) => {
     let instArray = this.state.instrument
@@ -149,6 +152,7 @@ class SoundControl extends React.Component {
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
         seePianoNote={this.seePiano}
+        setBeat={this.setBeat}
 
         />
       <PianoVisual

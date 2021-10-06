@@ -55,7 +55,7 @@ function NoteVisual(props) {
         notes = pianoNoteOnBeat
         largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(notes, i)}></Button></Col>)
       } else {
-        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected"></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onclick={() => props.setBeat(i)}></Button></Col>)
       }
       pianoNoteOnBeat = []
     }
