@@ -4,6 +4,7 @@ import { Row, Col, Button } from 'react-bootstrap'
 import './App.css'
 
 function NoteVisual(props) {
+  console.log(props.seePianoNote)
 
   function createInstrumentList(arrayOfNotes) {
     let instruments = []
@@ -43,6 +44,7 @@ function NoteVisual(props) {
   function pianoNote(arrayOfNotes) {
     let pianoNoteOnBeat = [];
     let largeArray = []
+    let notes = []
     for (let i = 0; i < arrayOfNotes.length; i++) {
       arrayOfNotes[i].forEach(function(note) {
         if (note.length < 4 && note !== 'b') {
@@ -50,11 +52,10 @@ function NoteVisual(props) {
         }
       })
       if (pianoNoteOnBeat[0] !== undefined) {
-        console.log(pianoNoteOnBeat)
-        console.log('notevisual before')
-        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(pianoNoteOnBeat)}></Button></Col>)
+        notes = pianoNoteOnBeat
+        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(notes)}>{notes}</Button></Col>)
       } else {
-        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="selected"></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected"></Button></Col>)
       }
       pianoNoteOnBeat = []
     }
@@ -72,8 +73,8 @@ return (
 )
 }
 
-// NoteVisual.propTypes = {
+NoteVisual.propTypes = {
 
-// }
+}
 
 export default NoteVisual
