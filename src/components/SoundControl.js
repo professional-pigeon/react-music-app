@@ -70,7 +70,7 @@ class SoundControl extends React.Component {
     let thingToFilter = instArray[location]
     instArray[location] = thingToFilter.filter(sound => sound != instrumentToRemove)
     if (instArray[location].length === 0) {
-      instArray[location].push("b")
+      instArray[location] = []
     }
     this.setState ({
       instrumenet: instArray
