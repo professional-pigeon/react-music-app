@@ -50,6 +50,7 @@ class SoundControl extends React.Component {
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
   setBeat = (beat) => {
+    console.log(beat)
     this.setState({ chosenBeat: beat })
   }
 
@@ -121,7 +122,6 @@ class SoundControl extends React.Component {
   }
 
   render() {
-    console.log(this.state.pianoNotes)
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     let note = soundObjects.frequency["A-4"]
@@ -152,7 +152,7 @@ class SoundControl extends React.Component {
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
         seePianoNote={this.seePiano}
-        setBeat={this.setBeat}
+        setNewBeat={this.setBeat}
 
         />
       <PianoVisual

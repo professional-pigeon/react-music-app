@@ -13,8 +13,6 @@ function PianoVisual(props) {
       keys.push(<Col className="keys" onClick={() => props.addNote(note, props.beat)}>{note}</Col>)
     }
   })
-  
-  console.log(props.beat)
 
   return (
     <div id="keyboard">
