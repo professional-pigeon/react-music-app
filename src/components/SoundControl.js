@@ -88,6 +88,20 @@ class SoundControl extends React.Component {
     })
   }
 
+  removePianoNote = (noteToRemove, location) => {
+    let instArray = this.state.instrument
+    let thingToFilter = instArray[location]
+    instArray[location] = thingToFilter.filter(sound => sound != noteToRemove)
+    if (instArray[location].length === 0) {
+      instArray[location] = []
+    }
+    let newNotes = instArray[location]
+    this.setState ({
+      instrumenet: instArray,
+      pianoNotes: newNotes
+    })
+  }
+
 
   handleChange(event) {
     event.preventDefault();
@@ -140,6 +154,7 @@ class SoundControl extends React.Component {
       <PianoVisual
         pianoNotes={piano}
         addNote={this.addPianoNote}
+        removeNote={this.removePianoNote}
         beat={this.state.chosenBeat}
         displayNotes={this.state.pianoNotes}
       />
