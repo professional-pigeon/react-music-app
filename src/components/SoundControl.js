@@ -20,7 +20,7 @@ class SoundControl extends React.Component {
     super(props)
     this.state = { 
       tempo: 100,
-      intervalID: 0,
+      intervalID: [],
       instrument: [['tom_low', 'G2', 'C3'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
       pianoNotes: [],
       chosenBeat: ""
@@ -38,7 +38,7 @@ class SoundControl extends React.Component {
 
   clearTheInterval = (id) => {
     id.forEach(id => clearInterval(id))
-    this.setState({ intervalID: 0 })
+    this.setState({ intervalID: [] })
   }
 
   setTempo = (number) => {
@@ -83,7 +83,7 @@ class SoundControl extends React.Component {
   removeInstrumentFromSpace = (instrumentToRemove, location) => {
     let instArray = this.state.instrument
     let thingToFilter = instArray[location]
-    instArray[location] = thingToFilter.filter(sound => sound != instrumentToRemove)
+    instArray[location] = thingToFilter.filter(sound => sound !== instrumentToRemove)
     if (instArray[location].length === 0) {
       instArray[location] = []
     }
@@ -95,7 +95,7 @@ class SoundControl extends React.Component {
   removePianoNote = (noteToRemove, location) => {
     let instArray = this.state.instrument
     let thingToFilter = instArray[location]
-    instArray[location] = thingToFilter.filter(sound => sound != noteToRemove)
+    instArray[location] = thingToFilter.filter(sound => sound !== noteToRemove)
     if (instArray[location].length === 0) {
       instArray[location] = []
     }

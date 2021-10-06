@@ -9,7 +9,7 @@ function Player(props) {
     props.setNewTempo(newTempo);
   }
 
-  let displayButton = (props.intervalID != 0 ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>play</button> )
+  let displayButton = (props.intervalID !== 0 ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>play</button> )
   
   return (
     <div id="player">
@@ -29,7 +29,13 @@ function Player(props) {
 Player.propTypes ={
   useTempo: PropTypes.number,
   setNewTempo: PropTypes.func,
-  sounds: PropTypes.array,
+  sounds: PropTypes.object,
+  play: PropTypes.func,
+  stop: PropTypes.func,
+  intervalID: PropTypes.array,
+  playInstrument: PropTypes.array,
+  playPiano: PropTypes.array
+
   }
 
 export default Player
