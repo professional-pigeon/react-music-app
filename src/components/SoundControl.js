@@ -47,9 +47,6 @@ class SoundControl extends React.Component {
   }
 
   seePiano = (notes, i) => {
-    console.log('before')
-    console.log(notes)
-    console.log('after')
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
 
@@ -63,6 +60,20 @@ class SoundControl extends React.Component {
     this.setState({
       instrument: instArray
     })
+  }
+
+  addPianoNote = (newNote, location) => {
+    let instArray = this.state.instrument
+    if (instArray[location][0] === "b") {
+      instArray[location][0] = newNote
+    } else {
+      instArray[location].push(newNote)
+    }
+    let currentPianoState = this.state.pianoNotes
+    currentPianoState.push(newNote)
+    currentPianoState.forEach(note => piano.play(note))
+    this.setState({ pianoNotes: currentPianoState,
+      instrument: instArray })
   }
 
   removeInstrumentFromSpace = (instrumentToRemove, location) => {
@@ -128,7 +139,7 @@ class SoundControl extends React.Component {
         />
       <PianoVisual
         pianoNotes={piano}
-        addNote={this.addInstrumentToSpace}
+        addNote={this.addPianoNote}
         beat={this.state.chosenBeat}
         displayNotes={this.state.pianoNotes}
       />
