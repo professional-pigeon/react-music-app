@@ -50,12 +50,13 @@ function NoteVisual(props) {
         }
       })
       if (pianoNoteOnBeat[0] !== undefined) {
-        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePiano(pianoNoteOnBeat)}></Button></Col>)
+        console.log(pianoNoteOnBeat)
+        console.log('notevisual before')
+        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(pianoNoteOnBeat)}></Button></Col>)
       } else {
         largeArray.push(<Col sm="auto"><Button variant="outline-info" className="selected"></Button></Col>)
       }
       pianoNoteOnBeat = []
-
     }
     return largeArray
   }

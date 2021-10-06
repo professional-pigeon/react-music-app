@@ -3,10 +3,14 @@ import { Col, Row } from 'react-bootstrap'
 
 function PianoVisual(props) {
   const notes = Object.keys(props.pianoNotes._sprite)
-  console.log(notes)
+  let displayNotes = props.displayNotes
   let keys = []
   notes.forEach(function(note){
-    keys.push(<Col className="keys">{note}</Col>)
+    if (displayNotes.includes(note) === true) {
+      keys.push(<Col className="keys-highlight">{note}</Col>)
+    } else {
+      keys.push(<Col className="keys">{note}</Col>)
+    }
   })
   
 

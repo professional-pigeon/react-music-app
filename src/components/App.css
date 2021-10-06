@@ -20,6 +20,13 @@
   width: 20px;
 }
 
+.keys-highlight {
+  border: solid black 2px;
+  height: 100px;
+  width: 20px;
+  background-color: pink;
+}
+
 #player {
   position: relative;
   /* margin: 2% 5% auto 5%; */
