@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
-/* body {
+body {
   background: linear-gradient(188deg, pink, cyan);
-} */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  height: 100vh;
+}
+
+#instructions {
+}
 
 .LeftMostCol {
   text-align: left;
@@ -18,18 +26,24 @@
   --bs-gutter-x: 0 !important;
 }
 
-.row >
+#keyboard {
+  position: fixed;
+  bottom: 5px;
+  overflow-y: scroll;
+}
 
 .keys {
   border: solid black 2px;
-  height: 100px;
-  width: 30px;
+  background-color: ivory;
+  height: 200px;
+  width: 50px;
+  color: black;
 }
 .keys > #Db2, #Eb2, #Gb2, #Ab2, #Bb2, #Db3, #Eb3, #Gb3, #Ab3, #Bb3, #Db4, #Eb4, #Gb4, #Ab4, #Bb4, #Db5, #Eb5 {
   background-color: black;
   color: white;
-  height: 50px;
-  width: 20px;
+  height: 125px;
+  width: 50px;
   z-index: +1;
 }
 .keys-highlight {

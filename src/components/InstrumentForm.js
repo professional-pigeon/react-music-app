@@ -10,12 +10,12 @@ function InstrumentForm(props) {
     let beat = event.target.beat.value
     props.addInstrument(newInstrument, (beat -1));
   }  
-  function handlePianoAdd(event) {
-    event.preventDefault();
-    let newInstrument = event.target.instrument.value
-    let beat = event.target.beat.value
-    props.addInstrument(newInstrument, (beat -1));
-  }
+  // function handlePianoAdd(event) {
+  //   event.preventDefault();
+  //   let newInstrument = event.target.instrument.value
+  //   let beat = event.target.beat.value
+  //   props.addInstrument(newInstrument, (beat -1));
+  // }
 
   function addBeats(ticks) {
     let beatArray = []
@@ -37,7 +37,7 @@ return (
   <div>
     <p>A bar has 16 beats 4 quarters and 16 16ths. Choose the corresponding position in the beat structure to add a note.</p>
     <form onSubmit={handleInstrumentAdd}>
-      <label>Pick drum noise:
+      <label>Add drum noise:
         <select name="instrument">
           {addSounds(sounds)}
         </select>
@@ -47,7 +47,7 @@ return (
       </label>
       <button type="submit">Add too loop</button>
     </form>
-    <form onSubmit={handlePianoAdd}>
+    {/* <form onSubmit={handlePianoAdd}>
       <label>Pick piano note:
         <select name="instrument">
           {addSounds(Object.keys(props.piano._sprite))}
@@ -57,7 +57,7 @@ return (
         </select>
       </label>
       <button type="submit">Add too loop</button>
-    </form>
+    </form> */}
 
     <button onClick={()=> props.resetLoop()}>Reset Loop</button>
     </div>

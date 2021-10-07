@@ -1,4 +1,4 @@
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Container } from 'react-bootstrap'
 
 
 function PianoVisual(props) {
@@ -15,11 +15,11 @@ function PianoVisual(props) {
   })
 
   return (
-    <div id="keyboard">
+    <Container id="keyboard">
       <Row>
         {keys}
       </Row>
-    </div>
+    </Container>
   )
 }
 

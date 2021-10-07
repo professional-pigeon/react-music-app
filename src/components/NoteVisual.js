@@ -54,7 +54,7 @@ console.log(props.setNewBeat)
         notes = pianoNoteOnBeat
         largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(notes, i)}></Button></Col>)
       } else {
-        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onClick={() => props.setNewBeat(i)}>{i}</Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onClick={() => props.setNewBeat(i)}></Button></Col>)
       }
       pianoNoteOnBeat = []
     }

@@ -9,6 +9,8 @@ import NoteVisual from './NoteVisual'
 import playOscillator from './Oscilator'
 import noteCreator from './sound_logic/NoteCreator'
 import PianoVisual from './PianoVisual'
+import Instructions from './Instructions'
+import { Container, Button, Col, Row } from 'react-bootstrap'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -23,7 +25,8 @@ class SoundControl extends React.Component {
       intervalID: [],
       instrument: [['tom_low', 'G2', 'C3'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
       pianoNotes: [],
-      chosenBeat: 0
+      chosenBeat: 0,
+      displayInstructions: false
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
@@ -93,6 +96,11 @@ class SoundControl extends React.Component {
     })
   }
 
+  seeInstructions = () => {
+    console.log("here")
+    this.setState({ displayInstructions: true })
+  }
+
   removePianoNote = (noteToRemove, location) => {
     let instArray = this.state.instrument
     let thingToFilter = instArray[location]
@@ -125,18 +133,31 @@ class SoundControl extends React.Component {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
     let note = soundObjects.frequency["A-4"]
+    let instructions = ""
+    if (this.state.displayInstructions === true) {
+      instructions = <Instructions/>
+    } else {
+      instructions = <Button variant="info" id="instructions" onClick={() => this.seeInstructions()}>Instructions</Button>
+    }
     return (
     <React.Fragment>
-      <Player
-        useTempo={useTempo} 
-        setNewTempo={this.setTempo}
-        sounds={drumMachine}
-        play={this.setIntervalIDandPlay}
-        stop={this.clearTheInterval}
-        intervalID={this.state.intervalID}
-        playInstrument={playInstrument}
-        playPiano={this.state.piano}
-      />
+      <Row>
+        <Col>
+          <Player
+            useTempo={useTempo} 
+            setNewTempo={this.setTempo}
+            sounds={drumMachine}
+            play={this.setIntervalIDandPlay}
+            stop={this.clearTheInterval}
+            intervalID={this.state.intervalID}
+            playInstrument={playInstrument}
+            playPiano={this.state.piano}
+          />
+          </Col>
+        <Col>
+        <Instructions/>
+        </Col>
+        </Row>
       <button onClick={() => playOscillator(note)}>tone</button>
       <button onClick={() => this.addBeat()}>Add beats</button>
       <InstrumentForm 
