@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
+import { Button } from "react-bootstrap"
 
 function Player(props) {
 
@@ -9,7 +10,7 @@ function Player(props) {
     props.setNewTempo(newTempo);
   }
 
-  let displayButton = (props.intervalID[0] !== undefined ? <button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</button> : <button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>play</button> )
+  let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>play</Button> )
   
   return (
     <div id="player">

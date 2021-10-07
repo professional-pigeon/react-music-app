@@ -7,10 +7,9 @@ import InstrumentForm from './InstrumentForm'
 import SetPlayInterval from './SetPlayInterval'
 import NoteVisual from './NoteVisual'
 import playOscillator from './Oscilator'
-import noteCreator from './sound_logic/NoteCreator'
 import PianoVisual from './PianoVisual'
 import Instructions from './Instructions'
-import { Container, Button, Col, Row } from 'react-bootstrap'
+import { Button, Col, Row } from 'react-bootstrap'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -158,8 +157,8 @@ class SoundControl extends React.Component {
         <Instructions/>
         </Col>
         </Row>
-      <button onClick={() => playOscillator(note)}>tone</button>
-      <button onClick={() => this.addBeat()}>Add beats</button>
+      <Button variant="danger" onClick={() => playOscillator(note)}>tone</Button>
+      <Button variant="primary" onClick={() => this.addBeat()}>Add beats</Button>
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}
