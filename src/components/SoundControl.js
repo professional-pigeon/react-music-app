@@ -49,14 +49,12 @@ class SoundControl extends React.Component {
   }
 
   seePiano = (notes, i) => {
-    console.log(notes)
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
 
   setBeat = (beat) => {
     let notes = this.state.instrument
-    console.log(notes)
-    console.log(beat)
+
     this.setState({ pianoNotes: notes[beat], chosenBeat: beat })
   }
 
@@ -75,12 +73,16 @@ class SoundControl extends React.Component {
   addPianoNote = (newNote, location) => {
     let instArray = this.state.instrument
     if (instArray[location][0] === undefined) {
+      console.log("here")
       instArray[location][0] = newNote
     } else {
+      console.log("there")
       instArray[location].push(newNote)
     }
     let currentPianoState = this.state.pianoNotes
-    currentPianoState.push(newNote)
+    // console.log(currentPianoState)
+    // currentPianoState.push(newNote)
+    // console.log(currentPianoState)
     currentPianoState.forEach(note => piano.play(note))
     this.setState({ pianoNotes: currentPianoState,
       instrument: instArray })
