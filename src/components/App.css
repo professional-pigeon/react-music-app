@@ -84,6 +84,7 @@ body {
 #stop-icon {
   position: relative;
   margin: 20px 2.5% 20px 2.5%;
+  color: white;
 }
 #tempo-form {
   position: absolute;

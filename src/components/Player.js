@@ -10,7 +10,7 @@ function Player(props) {
     props.setNewTempo(newTempo);
   }
 
-  let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>Stop music</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>play</Button> )
+  let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>{'\u25A1'}</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>▶</Button> )
   
   return (
     <div id="player">
