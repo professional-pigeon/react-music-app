@@ -26,12 +26,6 @@ body {
   --bs-gutter-x: 0 !important;
 }
 
-#keyboard {
-  position: fixed;
-  bottom: 5px;
-  overflow-y: scroll;
-}
-
 .keys {
   border: solid black 2px;
   background-color: ivory;
@@ -41,8 +35,9 @@ body {
 }
 .keys#Db2, .keys#Eb2, .keys#Gb2, .keys#Ab2, .keys#Bb2, .keys#Db3, .keys#Eb3, .keys#Gb3, .keys#Ab3, .keys#Bb3, .keys#Db4, .keys#Eb4, .keys#Gb4, .keys#Ab4, .keys#Bb4, .keys#Db5, .keys#Eb5 {
   background-color: black;
+  border: solid black 2px;
   color: white;
-  height: 125px;
+  height: 200px;
   width: 50px;
 }
 .highlight {
@@ -53,7 +48,7 @@ body {
 }
 .highlight#Db2, .highlight#Eb2, .highlight#Gb2, .highlight#Ab2, .highlight#Bb2, .highlight#Db3, .highlight#Eb3, .highlight#Gb3, .highlight#Ab3, .highlight#Bb3, .highlight#Db4, .highlight#Eb4, .highlight#Gb4, .highlight#Ab4, .highlight#Bb4, .highlight#Db5, .highlight#Eb5 {
   border: solid black 2px;
-  height: 125px;
+  height: 200px;
   width: 50px;
   background-color: pink;
 }
@@ -64,7 +59,7 @@ body {
   margin-top: 2%;
   width: 90%;
   max-width: 500px;
-  height: 150px;
+  height: 250px;
   background: rgba(255, 255, 255, 0.664);
 }
 
@@ -93,3 +88,77 @@ body {
   left: 50%;
   top: 0;
 }
+
+#keyboard {
+  position: fixed;
+  bottom: 5px;
+  /* overflow: auto;
+  overflow-x: scroll; */
+}
+
+/* ul.keys {
+  max-height: 200px;
+  height: 200px;
+  width: 20px;
+  margin:5em auto;
+  padding:3em 0 0 3em;
+  position: fixed;
+  bottom: 0;
+  border:1px solid #160801;
+  border-radius:1em;
+  background:linear-gradient(to bottom right,rgba(0,0,0,0.3),rgba(0,0,0,0)),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
+  /* box-shadow:0 0 50px rgba(0,0,0,0.5) inset,0 1px rgba(212,152,125,0.2) inset,0 5px 15px rgba(0,0,0,0.5) */
+/* }
+
+li.keys {
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:relative;
+  float:left;
+  margin:0 0 0 -1em
+}
+
+.keys {
+  height:10em;
+  width:3em;
+  z-index:1;
+  border-left:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:0 0 5px 5px;
+  box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#eee 0%,#fff 100%)
+}
+
+.highlight  {
+  height:10em;
+  width:3em;
+  z-index:1;
+  border-left:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:0 0 5px 5px;
+  box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#eee 0%,#fff 100%)
+}
+
+.keys#Db2, .keys#Eb2, .keys#Gb2, .keys#Ab2, .keys#Bb2, .keys#Db3, .keys#Eb3, .keys#Gb3, .keys#Ab3, .keys#Bb3, .keys#Db4, .keys#Eb4, .keys#Gb4, .keys#Ab4, .keys#Bb4, .keys#Db5, .keys#Eb5 {
+  height:4em;
+  width:1em;
+  margin:0 0 0 -1em;
+  z-index:2;
+  border:1px solid #000;
+  border-radius:0 0 3px 3px;
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 3px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5);
+  background:linear-gradient(45deg,#222 0%,#555 100%)
+}
+
+.highlight#Db2, .highlight#Eb2, .highlight#Gb2, .highlight#Ab2, .highlight#Bb2, .highlight#Db3, .highlight#Eb3, .highlight#Gb3, .highlight#Ab3, .highlight#Bb3, .highlight#Db4, .highlight#Eb4, .highlight#Gb4, .highlight#Ab4, .highlight#Bb4, .highlight#Db5, .highlight#Eb5 {
+  height:4em;
+  width:1em;
+  margin:0 0 0 -1em;
+  z-index:2;
+  border:1px solid #000;
+  border-radius:0 0 3px 3px;
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 3px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5);
+  background: pink;
+} */
