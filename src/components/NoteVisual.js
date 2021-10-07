@@ -25,13 +25,13 @@ console.log(props.setNewBeat)
       for (let i = 0; i < arrayOfNotes.length; i++) {
         let checkArray = arrayOfNotes[i]
         if (checkArray.includes(instrument)) {
-          colArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.removeInstrument(instrument, i)}></Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="primary" className="selected" onClick={() => props.removeInstrument(instrument, i)}></Button></Col>)
         } else {
-          colArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onClick={() => props.addInstrument(instrument, i)}></Button></Col>)
+          colArray.push(<Col sm="auto"><Button variant="warning" className="unselected" onClick={() => props.addInstrument(instrument, i)}></Button></Col>)
         }
       }
       rowArray.push(
-      <Row className="gutter" xs="auto">
+      <Row className="gutter" id="instrument" xs="auto">
         <Col xs={1} className="LeftMostCol">{instrument}</Col>
         {colArray}
       </Row>)
@@ -52,9 +52,9 @@ console.log(props.setNewBeat)
       })
       if (pianoNoteOnBeat[0] !== undefined) {
         notes = pianoNoteOnBeat
-        largeArray.push(<Col sm="auto"><Button variant="outline-primary" className="selected" onClick={() => props.seePianoNote(notes, i)}></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="primary" className="selected" onClick={() => props.seePianoNote(notes, i)}></Button></Col>)
       } else {
-        largeArray.push(<Col sm="auto"><Button variant="outline-info" className="unselected" onClick={() => props.setNewBeat(i)}></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="warning" className="unselected" onClick={() => props.setNewBeat(i)}></Button></Col>)
       }
       pianoNoteOnBeat = []
     }
@@ -64,7 +64,7 @@ console.log(props.setNewBeat)
 return (
   <div>
     {createInstrumentList(props.playInstrument)}
-    <Row className="gutter" xs="auto">
+    <Row className="gutter" xs="auto" id="instrument">
         <Col xs={1} className="LeftMostCol">Piano</Col>
         {pianoNote(props.playInstrument)}
     </Row>
