@@ -49,9 +49,10 @@ class SoundControl extends React.Component {
   seePiano = (notes, i) => {
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
+
   setBeat = (beat) => {
-    console.log(beat)
-    this.setState({ chosenBeat: beat })
+    let notes = this.state.instrument[beat]
+    this.setState({ pianoNotes: notes, chosenBeat: beat })
   }
 
   addInstrumentToSpace = (newInstrument, location) => {
@@ -106,18 +107,17 @@ class SoundControl extends React.Component {
     })
   }
 
-
   handleChange(event) {
     event.preventDefault();
   }
 
   resetLoop = () => {
-    this.setState({ instrument: [['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b'],['b']] })
+    this.setState({ instrument: [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] })
   }
 
   addBeat = () => {
     let newState = this.state.instrument
-    newState.push(["b"], ["b"], ["b"], ["b"])
+    newState.push([], [], [], [])
     this.setState({ instrument: newState})
   }
 
