@@ -23,7 +23,7 @@ class SoundControl extends React.Component {
       intervalID: [],
       instrument: [['tom_low', 'G2', 'C3'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
       pianoNotes: [],
-      chosenBeat: ""
+      chosenBeat: 0
     }
     this.handleChange = this.handleChange.bind(this);
     // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
