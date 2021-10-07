@@ -57,7 +57,7 @@ class SoundControl extends React.Component {
 
   addInstrumentToSpace = (newInstrument, location) => {
     let instArray = this.state.instrument
-    if (instArray[location][0] === "b") {
+    if (instArray[location][0] === undefined) {
       instArray[location][0] = newInstrument
     } else {
       instArray[location].push(newInstrument)
@@ -69,7 +69,7 @@ class SoundControl extends React.Component {
 
   addPianoNote = (newNote, location) => {
     let instArray = this.state.instrument
-    if (instArray[location][0] === "b") {
+    if (instArray[location][0] === undefined) {
       instArray[location][0] = newNote
     } else {
       instArray[location].push(newNote)
