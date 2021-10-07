@@ -7,7 +7,7 @@ function PianoVisual(props) {
   let keys = []
   notes.forEach(function(note){
     if (displayNotes.includes(note) === true) {
-      keys.push(<Col className="keys-highlight" id={note} onClick={() => props.removeNote(note, props.beat)}>{note}</Col>)
+      keys.push(<Col className="highlight" id={note} onClick={() => props.removeNote(note, props.beat)}>{note}</Col>)
     } else {
 
       keys.push(<Col className="keys" id={note} onClick={() => props.addNote(note, props.beat)}>{note}</Col>)

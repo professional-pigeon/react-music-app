@@ -39,17 +39,22 @@ body {
   width: 50px;
   color: black;
 }
-.keys > #Db2, #Eb2, #Gb2, #Ab2, #Bb2, #Db3, #Eb3, #Gb3, #Ab3, #Bb3, #Db4, #Eb4, #Gb4, #Ab4, #Bb4, #Db5, #Eb5 {
+.keys#Db2, .keys#Eb2, .keys#Gb2, .keys#Ab2, .keys#Bb2, .keys#Db3, .keys#Eb3, .keys#Gb3, .keys#Ab3, .keys#Bb3, .keys#Db4, .keys#Eb4, .keys#Gb4, .keys#Ab4, .keys#Bb4, .keys#Db5, .keys#Eb5 {
   background-color: black;
   color: white;
   height: 125px;
   width: 50px;
-  z-index: +1;
 }
-.keys-highlight {
+.highlight {
   border: solid black 2px;
-  height: 100px;
-  width: 20px;
+  height: 200px;
+  width: 50px;
+  background-color: pink;
+}
+.highlight#Db2, .highlight#Eb2, .highlight#Gb2, .highlight#Ab2, .highlight#Bb2, .highlight#Db3, .highlight#Eb3, .highlight#Gb3, .highlight#Ab3, .highlight#Bb3, .highlight#Db4, .highlight#Eb4, .highlight#Gb4, .highlight#Ab4, .highlight#Bb4, .highlight#Db5, .highlight#Eb5 {
+  border: solid black 2px;
+  height: 125px;
+  width: 50px;
   background-color: pink;
 }
 
