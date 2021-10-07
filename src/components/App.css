@@ -76,21 +76,22 @@ body {
   z-index: -1;
 }
 
-#play-icon {
+ #play-icon {
   position: relative;
-  margin: 20px 2.5% 20px 2.5%;
+
+  margin: 10% 10% 5% 15%;
 }
 
 #stop-icon {
   position: relative;
-  margin: 20px 2.5% 20px 2.5%;
+  margin: 5% 5% 5% 5%;
   color: white;
 }
 #tempo-form {
   position: absolute;
   left: 50%;
   top: 0;
-}
+} 
 
 #keyboard {
   position: fixed;
