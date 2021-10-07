@@ -48,13 +48,13 @@ class SoundControl extends React.Component {
     this.setState({ tempo: newTempo })
   }
 
-  seePiano = (notes, i) => {
+  seePiano = (i) => {
+    let notes = this.state.instrument[i]
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
 
   setBeat = (beat) => {
     let notes = this.state.instrument
-
     this.setState({ pianoNotes: notes[beat], chosenBeat: beat })
   }
 
