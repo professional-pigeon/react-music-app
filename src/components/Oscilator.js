@@ -4,7 +4,7 @@ function playOscillator(freq) {
   let mainGainNode = audioContext.createGain();
   mainGainNode.connect(audioContext.destination);
   mainGainNode.gain.value = 0.5
-  osc.type = 'triangle';
+  osc.type = 'sawtooth';
   osc.frequency.value = freq;
 
   osc.connect(mainGainNode)

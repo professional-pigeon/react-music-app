@@ -22,7 +22,7 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: [],
-      instrument: [['tom_low', 'G2', 'C3'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
+      instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
       pianoNotes: [],
       chosenBeat: 0,
       displayInstructions: false
@@ -49,12 +49,15 @@ class SoundControl extends React.Component {
   }
 
   seePiano = (notes, i) => {
+    console.log(notes)
     this.setState({ pianoNotes: notes, chosenBeat: i })
   }
 
   setBeat = (beat) => {
-    let notes = this.state.instrument[beat]
-    this.setState({ pianoNotes: notes, chosenBeat: beat })
+    let notes = this.state.instrument
+    console.log(notes)
+    console.log(beat)
+    this.setState({ pianoNotes: notes[beat], chosenBeat: beat })
   }
 
   addInstrumentToSpace = (newInstrument, location) => {
@@ -96,7 +99,6 @@ class SoundControl extends React.Component {
   }
 
   seeInstructions = () => {
-    console.log("here")
     this.setState({ displayInstructions: true })
   }
 

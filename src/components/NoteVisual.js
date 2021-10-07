@@ -4,7 +4,6 @@ import { Row, Col, Button } from 'react-bootstrap'
 import './App.css'
 
 function NoteVisual(props) {
-console.log(props.setNewBeat)
   function createInstrumentList(arrayOfNotes) {
     let instruments = []
     arrayOfNotes.forEach(function(instrumentList) {
@@ -52,9 +51,9 @@ console.log(props.setNewBeat)
       })
       if (pianoNoteOnBeat[0] !== undefined) {
         notes = pianoNoteOnBeat
-        largeArray.push(<Col sm="auto"><Button variant="primary" className="selected" onClick={() => props.seePianoNote(notes, i)}></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="primary" className="selected" onClick={() => props.seePianoNote(notes, i)}>{i}</Button></Col>)
       } else {
-        largeArray.push(<Col sm="auto"><Button variant="warning" className="unselected" onClick={() => props.setNewBeat(i)}></Button></Col>)
+        largeArray.push(<Col sm="auto"><Button variant="warning" className="unselected" onClick={() => props.setNewBeat(i)}>{i}</Button></Col>)
       }
       pianoNoteOnBeat = []
     }
