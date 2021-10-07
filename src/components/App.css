@@ -24,8 +24,8 @@ body {
 
 #keyboard > .row {
   --bs-gutter-x: 0 !important;
-  overflow-x: auto;
-  white-space: nowrap;
+  /* overflow-x: auto;
+  white-space: nowrap; */
 }
 
 .keys {
@@ -72,7 +72,7 @@ body {
   height: calc(100% + 4px);
   left: -2px;
   top: -2px;
-  background: linear-gradient(to left, #007db5, #ff8a00);
+  background: linear-gradient(to left,pink, #ff8a00);
   z-index: -1;
 }
 
@@ -93,8 +93,13 @@ body {
 
 #keyboard {
   position: fixed;
-  bottom: 5px;
+  bottom: 10px;
   max-height: 200px;
-  overflow: hidden;
-  overflow-x: scroll;
+  /* overflow: hidden;
+  overflow-x: scroll; */
+}
+
+#buttonRow {
+  height: 100px;
+  padding: 20px 20px 20px 20px;
 }

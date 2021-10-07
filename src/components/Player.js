@@ -19,7 +19,7 @@ function Player(props) {
       <form onSubmit={handleTempoChange}>
         <label>Set Tempo:</label>
         <input type="number" name="tempo" />
-        <button type="submit">Change Tempo</button>
+        <Button type="submit">Change Tempo</Button>
       </form>
       </div>
       {displayButton}

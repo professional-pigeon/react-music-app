@@ -26,20 +26,6 @@ function SetPlayInterval(arrayOfSounds, tempo, soundObject) {
       }
     }
 
-    // let playSoundAtInterval = (arr) => {
-    //   let n = getN() - 1
-    //   let soundHost = ""
-    //   let instrument = ""
-    //   arr[n].forEach(function (sound) {
-    //     soundHost = Object.keys(sound)
-    //     instrument = soundObjects[soundHost]
-    //     instrument.play(sound[soundHost])
-    //   })
-    //   if (n > arr.length -2 )  {
-    //     n = resetN()
-    //   }
-    // }
-
     let intervalID = setInterval(function() { 
       playSoundAtInterval(arrayOfSounds); 
       }, 

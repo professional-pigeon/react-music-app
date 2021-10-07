@@ -9,7 +9,7 @@ import NoteVisual from './NoteVisual'
 import playOscillator from './Oscilator'
 import PianoVisual from './PianoVisual'
 import Instructions from './Instructions'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Button, Container, Col, Row } from 'react-bootstrap'
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -80,9 +80,7 @@ class SoundControl extends React.Component {
       instArray[location].push(newNote)
     }
     let currentPianoState = this.state.pianoNotes
-    // console.log(currentPianoState)
     // currentPianoState.push(newNote)
-    // console.log(currentPianoState)
     currentPianoState.forEach(note => piano.play(note))
     this.setState({ pianoNotes: currentPianoState,
       instrument: instArray })
@@ -161,13 +159,23 @@ class SoundControl extends React.Component {
         <Instructions/>
         </Col>
         </Row>
-      <Button variant="danger" onClick={() => playOscillator(note)}>tone</Button>
-      <Button variant="primary" onClick={() => this.addBeat()}>Add beats</Button>
+      <Container id="buttonRow">
+        <Row>
+          <Col>
+            <Button variant="danger" onClick={() => playOscillator(note)}>Terrible Tone</Button>
+          </Col>
+          <Col>
+            <Button variant="primary" onClick={() => this.addBeat()}>Add beats</Button>
+          </Col>
+          <Col>
+            <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
+          </Col>
+        </Row>
+      </Container>
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
-        resetLoop={this.resetLoop}
         drums={drumMachine}
         piano={piano}
       />

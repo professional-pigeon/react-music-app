@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { getDefaultNormalizer } from '@testing-library/dom';
+import { Button, Container } from 'react-bootstrap'
 
 function InstrumentForm(props) {
 
@@ -34,7 +34,7 @@ function InstrumentForm(props) {
   }
 
 return (
-  <div>
+  <Container>
     <form onSubmit={handleInstrumentAdd}>
       <label>Add drum noise:
         <select name="instrument">
@@ -44,22 +44,10 @@ return (
             {addBeats(props.playInstrument.length)}
         </select>
       </label>
-      <button type="submit">Add too loop</button>
+      <Button variant="primary" type="submit">Add too loop</Button>
     </form>
-    {/* <form onSubmit={handlePianoAdd}>
-      <label>Pick piano note:
-        <select name="instrument">
-          {addSounds(Object.keys(props.piano._sprite))}
-        </select>
-        <select name="beat">
-            {addBeats(props.playInstrument.length)}
-        </select>
-      </label>
-      <button type="submit">Add too loop</button>
-    </form> */}
 
-    <button onClick={()=> props.resetLoop()}>Reset Loop</button>
-    </div>
+    </Container>
   )
 }
 
