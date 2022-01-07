@@ -10,6 +10,7 @@ function SetPlayInterval(arrayOfSounds, tempo, soundObject) {
         return this.n
       }
     }
+    
     const unboundN = module.upN
     const getN = unboundN.bind(module)
     const unboundReset = module.resetN

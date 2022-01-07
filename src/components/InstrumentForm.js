@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Button, Container } from 'react-bootstrap'
+import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 
 function InstrumentForm(props) {
 
@@ -35,19 +35,28 @@ function InstrumentForm(props) {
 
 return (
   <Container>
-    <form onSubmit={handleInstrumentAdd}>
-      <label>Add drum noise:
-        <select name="instrument">
-          {addSounds(sounds)}
-        </select>
-        <select name="beat">
-            {addBeats(props.playInstrument.length)}
-        </select>
-      </label>
-      <Button variant="primary" type="submit">Add too loop</Button>
-    </form>
+    <Form onSubmit={handleInstrumentAdd}>
+      <Row>
+        <Col>
+          <Form.Label>Add drum noise:</Form.Label>
+        </Col>
+        <Col>
+          <Form.Select name="instrument">
+            {addSounds(sounds)}
+          </Form.Select>
+        </Col>
+        <Col>
+          <Form.Select name="beat">
+              {addBeats(props.playInstrument.length)}
+          </Form.Select>
+        </Col>
+        <Col>
+          <Button variant="primary" type="submit">Add too loop</Button>
+        </Col>
+      </Row>
+    </Form>
 
-    </Container>
+  </Container>
   )
 }
 

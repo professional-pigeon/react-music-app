@@ -11,20 +11,20 @@
 
 ## Technologies Used
 
+* [React]
 * [Markdown](https://www.markdownguide.org/)
 * [VS studio](https://code.visualstudio.com/)
 * [Bootstrap](https://getbootstrap.com/)
+* [Howler]
 
 ## Description
 
 This is going to be a music notation app written in javascript and using react. At it's current iteration it is a drum machine. 
 
-This is also my capstone project for my coding school. I'm excited for any feedback or suggestions you may have as it takes shape.
-
 ## Setup/Installation Requirements
 
 * Download database from github repository [here] (https://github.com/professional-pigeon/react-music-app)
-* Navigate to the top level of the directory and run "npm build" in your terminal to install packages
+* Navigate to the top level of the directory and run "npm run build" in your terminal to install packages
 * Run "npm start" to open the webpage hosted on your machine.
 
 ## License
@@ -42,12 +42,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Contact Information
 
 Kyle.KayPerez@gmail.com
-
-
-What are the next steps:
-1. update player view.
-
-1. Create sound library for other instruments, make addSound functions more flexible
-  => Will take some time, maybe plan to make your own sound sprites.
-2. Explore options for data visualization.
-3. 

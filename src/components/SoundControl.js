@@ -22,14 +22,12 @@ class SoundControl extends React.Component {
     this.state = { 
       tempo: 100,
       intervalID: [],
-      instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],[]],
+      instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']],
       pianoNotes: [],
       chosenBeat: 0,
       displayInstructions: false
     }
     this.handleChange = this.handleChange.bind(this);
-    // this.addInstrumentToSpace = this.addInstrumentToSpace.bind(this);
-    // this.removeInstrumentFromSpace = this.removeInstrumentFromSpace(this);
   }
 
   setIntervalIDandPlay = (playInstrument, playPiano, useTempo) => {
@@ -161,9 +159,9 @@ class SoundControl extends React.Component {
         </Row>
       <Container id="buttonRow">
         <Row>
-          <Col>
+          {/* <Col>
             <Button variant="danger" onClick={() => playOscillator(note)}>Terrible Tone</Button>
-          </Col>
+          </Col> */}
           <Col>
             <Button variant="primary" onClick={() => this.addBeat()}>Add beats</Button>
           </Col>
@@ -187,13 +185,13 @@ class SoundControl extends React.Component {
         setNewBeat={this.setBeat}
 
         />
-      <PianoVisual
+      {/* <PianoVisual
         pianoNotes={piano}
         addNote={this.addPianoNote}
         removeNote={this.removePianoNote}
         beat={this.state.chosenBeat}
         displayNotes={this.state.pianoNotes}
-      />
+      /> */}
     </React.Fragment>
     )
   }

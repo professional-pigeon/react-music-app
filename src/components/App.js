@@ -7,7 +7,6 @@ function App() {
   return (
     <Container>
       <SoundControl />
-      {/* <DrawControl /> */}
     </Container>
   );
 }
