@@ -10,12 +10,6 @@ function InstrumentForm(props) {
     let beat = event.target.beat.value
     props.addInstrument(newInstrument, (beat -1));
   }  
-  // function handlePianoAdd(event) {
-  //   event.preventDefault();
-  //   let newInstrument = event.target.instrument.value
-  //   let beat = event.target.beat.value
-  //   props.addInstrument(newInstrument, (beat -1));
-  // }
 
   function addBeats(ticks) {
     let beatArray = []

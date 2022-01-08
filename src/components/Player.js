@@ -10,7 +10,7 @@ function Player(props) {
     props.setNewTempo(newTempo);
   }
 
-  let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>{'\u25A1'}</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.playPiano, props.useTempo)}>▶</Button> )
+  let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>{'\u25A1'}</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.useTempo)}>▶</Button> )
   
   return (
     <div id="player">
@@ -35,8 +35,6 @@ Player.propTypes ={
   stop: PropTypes.func,
   intervalID: PropTypes.array,
   playInstrument: PropTypes.array,
-  playPiano: PropTypes.array
-
   }
 
 export default Player

@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap"
-function Instructions(props) {
+
+function Instructions() {
   return (
     <Container id='instructions'>
       <p>Thank you for trying out my music app. It currently contains a drum machine and a piano.</p>
