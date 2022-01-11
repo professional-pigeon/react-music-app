@@ -11,21 +11,25 @@
 
 ## Technologies Used
 
-* [React]
+* [React](https://reactjs.org/)
 * [Markdown](https://www.markdownguide.org/)
 * [VS studio](https://code.visualstudio.com/)
 * [Bootstrap](https://getbootstrap.com/)
-* [Howler]
+* [Howler](https://howlerjs.com/)
 
 ## Description
 
-This is going to be a music notation app written in javascript and using react. At it's current iteration it is a drum machine. 
+This is a drum machine that allows you to add a beat at a time
 
 ## Setup/Installation Requirements
 
 * Download database from github repository [here] (https://github.com/professional-pigeon/react-music-app)
 * Navigate to the top level of the directory and run "npm run build" in your terminal to install packages
 * Run "npm start" to open the webpage hosted on your machine.
+
+Or
+
+* Click link to Heroku deployment. [DrumMachine](https://drum-machine-kp.herokuapp.com/)
 
 ## License
 
