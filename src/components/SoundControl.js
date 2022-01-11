@@ -86,6 +86,12 @@ class SoundControl extends React.Component {
     this.setState({ instrument: newState})
   }
 
+  addBar = () => {
+      let newState = this.state.instrument
+      newState.push([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [])
+      this.setState({ instrument: newState})
+  }
+
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
@@ -116,7 +122,10 @@ class SoundControl extends React.Component {
       <Container id="buttonRow">
         <Row>
           <Col>
-            <Button variant="primary" onClick={() => this.addBeat()}>Add beats</Button>
+            <Button variant="primary" onClick={() => this.addBeat()}>Add beat</Button>
+          </Col>
+          <Col>
+            <Button variant="primary" onClick={() => this.addBar()}>Add 4 beats</Button>
           </Col>
           <Col>
             <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
