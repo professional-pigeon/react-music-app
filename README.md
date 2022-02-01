@@ -19,7 +19,13 @@
 
 ## Description
 
-This is a drum machine that allows you to add a beat at a time
+This is a drum machine that allows you to add a beat at a time. It's current state uses howler to playback audiosprites of drum sounds in a loop.
+
+## Future Goals
+
+* Add some selectable presets.
+* Rearrage player and instruction elements.
+* Add ability to save your beats!
 
 ## Setup/Installation Requirements
 
