@@ -45,7 +45,7 @@ return (
           </Form.Select>
         </Col>
         <Col>
-          <Button variant="primary" type="submit">Add too loop</Button>
+          <Button variant="primary" type="submit">Add to loop</Button>
         </Col>
       </Row>
     </Form>
