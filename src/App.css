@@ -4,6 +4,7 @@
   --color-three: rgb(224, 87, 160);
   --color-four: rgb(65, 120, 171);
   --color-five: rgb(52, 82, 93);
+  /* derived from pg 136 of color theory book */
 }
 
 .App {
@@ -27,39 +28,6 @@ body {
   margin: 0;
 }
 
-#keyboard > .row {
-  --bs-gutter-x: 0 !important;
-  /* overflow-x: auto;
-  white-space: nowrap; */
-}
-
-.keys {
-  border: solid black 2px;
-  background-color: ivory;
-  height: 200px;
-  width: 50px;
-  color: black;
-}
-.keys#Db2, .keys#Eb2, .keys#Gb2, .keys#Ab2, .keys#Bb2, .keys#Db3, .keys#Eb3, .keys#Gb3, .keys#Ab3, .keys#Bb3, .keys#Db4, .keys#Eb4, .keys#Gb4, .keys#Ab4, .keys#Bb4, .keys#Db5, .keys#Eb5 {
-  background-color: black;
-  border: solid black 2px;
-  color: white;
-  height: 200px;
-  width: 50px;
-}
-.highlight {
-  border: solid black 2px;
-  height: 200px;
-  width: 50px;
-  background-color: pink;
-}
-.highlight#Db2, .highlight#Eb2, .highlight#Gb2, .highlight#Ab2, .highlight#Bb2, .highlight#Db3, .highlight#Eb3, .highlight#Gb3, .highlight#Ab3, .highlight#Bb3, .highlight#Db4, .highlight#Eb4, .highlight#Gb4, .highlight#Ab4, .highlight#Bb4, .highlight#Db5, .highlight#Eb5 {
-  border: solid black 2px;
-  height: 200px;
-  width: 50px;
-  background-color: pink;
-}
-
 #player {
   position: relative;
   /* margin: 2% 5% auto 5%; */
@@ -81,7 +49,7 @@ body {
   z-index: -1;
 }
 
- #play-icon {
+#play-icon {
   position: relative;
 
   margin: 10% 10% 5% 15%;
@@ -97,14 +65,6 @@ body {
   left: 50%;
   top: 0;
 } 
-
-#keyboard {
-  position: fixed;
-  bottom: 10px;
-  max-height: 200px;
-  /* overflow: hidden;
-  overflow-x: scroll; */
-}
 
 #buttonRow {
   height: 100px;
