@@ -8,13 +8,14 @@ import { Container } from 'react-bootstrap'
 function App() {
   return (
     <div>
-    <HeaderControl />
-    <Container>
-      <SoundControl />
-    </Container>
+      <HeaderControl />
+      <Container>
+        <SoundControl />
+      </Container>
     </div>
   );
 }
 
-
 export default App;
+
+// CSS note: This is the appropriate place for a container. check after removing other css.

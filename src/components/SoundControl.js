@@ -1,10 +1,9 @@
 import React from 'react'
 import SoundLibrary from './sound_logic/SoundLibrary'
-import Player from './Player'
-import InstrumentForm from './InstrumentForm'
-import SetPlayInterval from './SetPlayInterval'
-import NoteVisual from './NoteVisual'
-import Instructions from './Instructions'
+import Player from './display/Player'
+import InstrumentForm from './display/InstrumentForm'
+import SetPlayInterval from './sound_logic/SetPlayInterval'
+import NoteVisual from './display/NoteVisual'
 import { Button, Container, Col, Row } from 'react-bootstrap'
 
 let soundObjects = SoundLibrary()
@@ -95,16 +94,9 @@ class SoundControl extends React.Component {
   render() {
     let useTempo = this.state.tempo
     let playInstrument = this.state.instrument
-    let instructions = ""
-    if (this.state.displayInstructions === true) {
-      instructions = <Instructions/>
-    } else {
-      instructions = <Button variant="info" id="instructions" onClick={() => this.seeInstructions()}>Instructions</Button>
-    }
     return (
     <React.Fragment>
       <Row>
-        <Col>
           <Player
             useTempo={useTempo} 
             setNewTempo={this.setTempo}
@@ -114,12 +106,8 @@ class SoundControl extends React.Component {
             intervalID={this.state.intervalID}
             playInstrument={playInstrument}
           />
-          </Col>
-        <Col>
-        {instructions}
-        </Col>
         </Row>
-      <Container id="buttonRow">
+      <div style={{ borderStyle: 'solid' }} id="buttonRow">
         <Row>
           <Col>
             <Button variant="primary" onClick={() => this.addBeat()}>Add beat</Button>
@@ -131,7 +119,7 @@ class SoundControl extends React.Component {
             <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
           </Col>
         </Row>
-      </Container>
+      </div>
       <InstrumentForm 
         handleChange={this.handleChange}
         playInstrument={playInstrument}

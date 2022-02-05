@@ -28,7 +28,7 @@ function InstrumentForm(props) {
   }
 
 return (
-  <Container>
+  <div style={{ borderStyle: 'solid'}}>
     <Form onSubmit={handleInstrumentAdd}>
       <Row>
         <Col>
@@ -49,8 +49,7 @@ return (
         </Col>
       </Row>
     </Form>
-
-  </Container>
+  </div>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Instructions from './Instructions'
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
 
 function HeaderControl() {

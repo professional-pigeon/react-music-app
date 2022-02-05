@@ -28,44 +28,6 @@ body {
   margin: 0;
 }
 
-#player {
-  position: relative;
-  /* margin: 2% 5% auto 5%; */
-  margin-top: 2%;
-  width: 90%;
-  max-width: 500px;
-  height: 250px;
-  background: rgba(255, 255, 255, 0.664);
-}
-
-#player::before {
-  position: absolute;
-  content: '';
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(to left,pink, #ff8a00);
-  z-index: -1;
-}
-
-#play-icon {
-  position: relative;
-
-  margin: 10% 10% 5% 15%;
-}
-
-#stop-icon {
-  position: relative;
-  margin: 10% 10% 5% 15%;
-  color: white;
-}
-#tempo-form {
-  position: absolute;
-  left: 50%;
-  top: 0;
-} 
-
 #buttonRow {
   height: 100px;
   padding: 20px 20px 20px 20px;

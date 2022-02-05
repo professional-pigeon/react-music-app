@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Row, Col, Button } from 'react-bootstrap'
-import './../App.css'
+import './../../App.css'
 
 function NoteVisual(props) {
 
@@ -42,7 +42,7 @@ function NoteVisual(props) {
   }
 
 return (
-  <div>
+  <div style={{ borderStyle: 'solid'}}>
     {createInstrumentList(props.playInstrument)}
   </div>
 )
