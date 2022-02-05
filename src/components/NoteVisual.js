@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Row, Col, Button } from 'react-bootstrap'
-import './App.css'
+import './../App.css'
 
 function NoteVisual(props) {
 
