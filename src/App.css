@@ -1,3 +1,11 @@
+:root {
+  --color-one: rgb(238, 236, 206);
+  --color-two: rgb(249, 181, 124);
+  --color-three: rgb(224, 87, 160);
+  --color-four: rgb(65, 120, 171);
+  --color-five: rgb(52, 82, 93);
+}
+
 .App {
   text-align: center;
   height: 100vh;
