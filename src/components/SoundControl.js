@@ -96,6 +96,24 @@ class SoundControl extends React.Component {
     let playInstrument = this.state.instrument
     return (
     <React.Fragment>
+      <div style={{ borderStyle: 'solid' }} id="buttonRow">
+        <Row>
+          <Col>
+            <Button variant="primary" onClick={() => this.addBeat()}>Add beat</Button>
+            <Button variant="primary" onClick={() => this.addBar()}>Add 4 beats</Button>
+            <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
+          </Col>
+          <Col>
+          <InstrumentForm 
+            handleChange={this.handleChange}
+            playInstrument={playInstrument}
+            addInstrument={this.addInstrumentToSpace}
+            drums={drumMachine}
+          />
+          </Col>
+        </Row>
+      </div>
+
       <Row>
           <Player
             useTempo={useTempo} 
@@ -106,26 +124,7 @@ class SoundControl extends React.Component {
             intervalID={this.state.intervalID}
             playInstrument={playInstrument}
           />
-        </Row>
-      <div style={{ borderStyle: 'solid' }} id="buttonRow">
-        <Row>
-          <Col>
-            <Button variant="primary" onClick={() => this.addBeat()}>Add beat</Button>
-          </Col>
-          <Col>
-            <Button variant="primary" onClick={() => this.addBar()}>Add 4 beats</Button>
-          </Col>
-          <Col>
-            <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
-          </Col>
-        </Row>
-      </div>
-      <InstrumentForm 
-        handleChange={this.handleChange}
-        playInstrument={playInstrument}
-        addInstrument={this.addInstrumentToSpace}
-        drums={drumMachine}
-      />
+      </Row>
       <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
