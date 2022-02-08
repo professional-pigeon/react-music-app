@@ -18,7 +18,8 @@ class SoundControl extends React.Component {
       intervalID: [],
       instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']],
       chosenBeat: 0,
-      displayInstructions: false
+      displayInstructions: false,
+      presets: { 1: { name: 'starting', preset: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']] }}
     }
     this.handleChange = this.handleChange.bind(this);
   }
