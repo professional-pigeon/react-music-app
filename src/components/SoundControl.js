@@ -4,6 +4,7 @@ import Player from './display/Player'
 import InstrumentForm from './display/InstrumentForm'
 import SetPlayInterval from './sound_logic/SetPlayInterval'
 import NoteVisual from './display/NoteVisual'
+import Presets from './display/Presets'
 import { Button, Container, Col, Row } from 'react-bootstrap'
 
 let soundObjects = SoundLibrary()
@@ -111,7 +112,7 @@ class SoundControl extends React.Component {
           />
           </Col>
           <Col>
-            <p>presets to go here</p>
+            <Presets />
           </Col>
         </Row>
       </div>
