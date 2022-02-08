@@ -13,7 +13,7 @@
 }
 
 body {
-  background: linear-gradient(188deg, pink, cyan);
+  background: linear-gradient(var(--color-two), var(--color-three), var(--color-four));
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
