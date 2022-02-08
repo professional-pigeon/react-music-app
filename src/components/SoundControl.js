@@ -1,11 +1,11 @@
-import React from 'react'
-import SoundLibrary from './sound_logic/SoundLibrary'
-import Player from './display/Player'
-import InstrumentForm from './display/InstrumentForm'
-import SetPlayInterval from './sound_logic/SetPlayInterval'
-import NoteVisual from './display/NoteVisual'
-import Presets from './display/Presets'
-import { Button, Container, Col, Row } from 'react-bootstrap'
+import React from 'react';
+import SoundLibrary from './sound_logic/SoundLibrary';
+import Player from './display/Player';
+import InstrumentForm from './display/InstrumentForm';
+import SetPlayInterval from './sound_logic/SetPlayInterval';
+import NoteVisual from './display/NoteVisual';
+import Presets from './display/Presets';
+import { Button, Col, Row } from 'react-bootstrap';
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -117,15 +117,15 @@ class SoundControl extends React.Component {
         </Row>
       </div>
       <Row>
-          <Player
-            useTempo={useTempo} 
-            setNewTempo={this.setTempo}
-            sounds={drumMachine}
-            play={this.setIntervalIDandPlay}
-            stop={this.clearTheInterval}
-            intervalID={this.state.intervalID}
-            playInstrument={playInstrument}
-          />
+        <Player
+          useTempo={useTempo} 
+          setNewTempo={this.setTempo}
+          sounds={drumMachine}
+          play={this.setIntervalIDandPlay}
+          stop={this.clearTheInterval}
+          intervalID={this.state.intervalID}
+          playInstrument={playInstrument}
+        />
       </Row>
       <NoteVisual 
         playInstrument={playInstrument}

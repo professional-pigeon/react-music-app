@@ -1,8 +1,8 @@
-import React from 'react'
-import Instructions from './Instructions'
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
-import { useState } from 'react'
-import './Header.css'
+import React from 'react';
+import Instructions from './Instructions';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { useState } from 'react';
+import './Header.css';
 
 function HeaderControl() {
   const [popUp, setPopUp] = useState(false)

@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from "prop-types"
-import { Button, Container, Row, Col } from "react-bootstrap"
+import React from 'react';
+import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 function Player(props) {
 

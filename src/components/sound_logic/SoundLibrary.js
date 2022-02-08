@@ -1,8 +1,8 @@
-import lowWoodBlock from "../../sounds/Low-Wood-Block.mp3"
-import { Howl } from 'howler'
-import spriteSounds from "../../sounds/sprite.mp3"
-import piano from "../../sounds/piano.mp3"
-import noteCreator from "./NoteCreator"
+import lowWoodBlock from "../../sounds/Low-Wood-Block.mp3";
+import { Howl } from 'howler';
+import spriteSounds from "../../sounds/sprite.mp3";
+import piano from "../../sounds/piano.mp3";
+import noteCreator from "./NoteCreator";
 
 let noteFreq = noteCreator(27.500)
 
