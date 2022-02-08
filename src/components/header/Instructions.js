@@ -1,8 +1,11 @@
-import { Container } from "react-bootstrap"
+import React from 'react'
+import './Header.css'
 
-function Instructions() {
+function Instructions({ close }) {
   return (
-    <Container id='instructions'>
+    <div className='popUpBox'>
+      <div className='box'>
+      <span className="closeIcon" onClick={close}>x</span>
       <p>Thank you for trying out my music app. It currently contains a drum machine and a piano.</p>
       <ul>
         <li>Click the play button to start your loop, and the stop button to stop the loop</li>
@@ -13,7 +16,8 @@ function Instructions() {
         <li>To add piano notes, select the beat on the piano and choose which notes to add remove</li>
         <li>You can also change the Tempo in the set tempo field</li>
       </ul>
-    </Container>
+      </div>
+    </div>
   )
 }
 
