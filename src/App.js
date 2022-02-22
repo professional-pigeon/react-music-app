@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       <HeaderControl />
-      <Container>
+      <div className='main'>
         <SoundControl />
-      </Container>
+      </div>
     </div>
   );
 }

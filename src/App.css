@@ -32,3 +32,12 @@ body {
   height: 100px;
   padding: 20px 20px 20px 20px;
 }
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sub-main {
+  width: 100%;
+}

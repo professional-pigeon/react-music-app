@@ -98,9 +98,7 @@ class SoundControl extends React.Component {
     let playInstrument = this.state.instrument
     return (
     <React.Fragment>
-      <div style={{ borderStyle: 'solid', height: 'fit-content' }} id="buttonRow">
-        <Row>
-          <Col>
+      <div style={{ borderStyle: 'solid', height: 'fit-content' }} id="buttonRow" className='sub-main'>
             <Button variant="primary" onClick={() => this.addBeat()}>Add beat</Button>
             <Button variant="primary" onClick={() => this.addBar()}>Add 4 beats</Button>
             <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
@@ -110,13 +108,8 @@ class SoundControl extends React.Component {
             addInstrument={this.addInstrumentToSpace}
             drums={drumMachine}
           />
-          </Col>
-          <Col>
             <Presets />
-          </Col>
-        </Row>
       </div>
-      <Row>
         <Player
           useTempo={useTempo} 
           setNewTempo={this.setTempo}
@@ -126,7 +119,6 @@ class SoundControl extends React.Component {
           intervalID={this.state.intervalID}
           playInstrument={playInstrument}
         />
-      </Row>
       <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}

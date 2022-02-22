@@ -42,7 +42,7 @@ function NoteVisual(props) {
   }
 
 return (
-  <div style={{ borderStyle: 'solid'}}>
+  <div style={{ borderStyle: 'solid', height: 'fit-content' }} id="buttonRow" className='sub-main'>
     {createInstrumentList(props.playInstrument)}
   </div>
 )
