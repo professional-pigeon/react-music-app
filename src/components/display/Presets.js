@@ -11,6 +11,7 @@ function Presets(props) {
   return (
     <>
     {keys}
+    <Button onClick={() => props.addPreset(props.instruments)}>add</Button>
     </>
   )
 }
@@ -18,6 +19,8 @@ function Presets(props) {
 Presets.propTypes = {
   presets: PropTypes.object,
   setPreset: PropTypes.func,
+  addPreset: PropTypes.func,
+  instruments: PropTypes.array,
 }
 
 export default Presets

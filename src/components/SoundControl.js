@@ -47,7 +47,7 @@ class SoundControl extends React.Component {
   addPreset = (arr) => {
     let newPresets = this.state.presets
     newPresets[Object.keys(this.state.presets).length + 1] = arr
-    this.setState({presets: newState})
+    this.setState({presets: newPresets})
   }
 
   addInstrumentToSpace = (newInstrument, location) => {
@@ -111,7 +111,7 @@ class SoundControl extends React.Component {
             addInstrument={this.addInstrumentToSpace}
             drums={drumMachine}
           />
-            <Presets presets={this.state.presets} setPreset={this.setPreset} />
+            <Presets presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} instruments={this.state.instrument}  />
       </div>
         <Player
           useTempo={useTempo} 
