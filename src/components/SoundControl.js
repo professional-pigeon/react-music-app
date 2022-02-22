@@ -44,6 +44,12 @@ class SoundControl extends React.Component {
     this.setState({instrument: this.state.presets[key]})
   }
 
+  addPreset = (arr) => {
+    let newPresets = this.state.presets
+    newPresets[Object.keys(this.state.presets).length + 1] = arr
+    this.setState({presets: newState})
+  }
+
   addInstrumentToSpace = (newInstrument, location) => {
     let instArray = this.state.instrument
     if (instArray[location][0] === undefined) {
