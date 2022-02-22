@@ -14,10 +14,10 @@ function Player(props) {
   
   return (
     <div className='sub-main player'>
-      <p>Tempo in BPM: {props.useTempo}</p>
+      <p>Current Tempo: {props.useTempo} BPM</p>
       <form onSubmit={handleTempoChange}>
         <label>Set Tempo:</label>
-        <input type="number" name="tempo" />
+        <input type="number" name="tempo" defaultValue={parseInt(props.useTempo)} />
         <Button type="submit">Change Tempo</Button>
       </form>
       {displayButton}
