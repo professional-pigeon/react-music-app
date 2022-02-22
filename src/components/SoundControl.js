@@ -5,6 +5,7 @@ import InstrumentForm from './display/InstrumentForm';
 import SetPlayInterval from './sound_logic/SetPlayInterval';
 import NoteVisual from './display/NoteVisual';
 import Presets from './display/Presets';
+import Tempo from './display/Tempo'
 import { Button } from 'react-bootstrap';
 
 let soundObjects = SoundLibrary()
@@ -131,15 +132,16 @@ class SoundControl extends React.Component {
         />
         <Presets updatePreset={this.updatePreset} presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
       </div>
+      <div className='sub-main player'>
         <Player
-          useTempo={useTempo} 
-          setNewTempo={this.setTempo}
           sounds={drumMachine}
           play={this.setIntervalIDandPlay}
           stop={this.clearTheInterval}
           intervalID={this.state.intervalID}
           playInstrument={playInstrument}
         />
+        <Tempo useTempo={useTempo} setNewTempo={this.setTempo} />
+        </div>
       <NoteVisual 
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
