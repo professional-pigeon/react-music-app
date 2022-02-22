@@ -52,7 +52,6 @@ NoteVisual.propTypes = {
   addInstrument: PropTypes.func,
   removeInstrument: PropTypes.func,
   seePianoNote: PropTypes.func,
-  setNewBeat: PropTypes.func
 }
 
 export default NoteVisual

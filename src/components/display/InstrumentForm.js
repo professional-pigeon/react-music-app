@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { Button, Container, Row, Col, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 function InstrumentForm(props) {
 

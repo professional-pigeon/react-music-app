@@ -5,7 +5,7 @@ import InstrumentForm from './display/InstrumentForm';
 import SetPlayInterval from './sound_logic/SetPlayInterval';
 import NoteVisual from './display/NoteVisual';
 import Presets from './display/Presets';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -38,11 +38,6 @@ class SoundControl extends React.Component {
   setTempo = (number) => {
     let newTempo = number
     this.setState({ tempo: newTempo })
-  }
-
-  setBeat = (beat) => {
-    let notes = this.state.instrument
-    this.setState({ chosenBeat: beat })
   }
 
   addInstrumentToSpace = (newInstrument, location) => {
@@ -121,7 +116,6 @@ class SoundControl extends React.Component {
         playInstrument={playInstrument}
         addInstrument={this.addInstrumentToSpace}
         removeInstrument={this.removeInstrumentFromSpace}
-        setNewBeat={this.setBeat}
         />
     </React.Fragment>
     )
