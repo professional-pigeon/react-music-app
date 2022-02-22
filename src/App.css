@@ -29,12 +29,13 @@
   border: solid black;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: auto;
   max-width: 30%;
 }
 
-#preset-buttons > button {
+#preset-buttons > button, #preset-add-delete {
   margin: 5px;
 }
 
