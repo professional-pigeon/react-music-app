@@ -9,10 +9,11 @@ function Presets(props) {
     )
 
   return (
-    <>
+    <div className="presets">
+    <h4>Presets</h4>
     {keys}
     <Button onClick={() => props.addPreset(props.instruments)}>add</Button>
-    </>
+    </div>
   )
 }
 

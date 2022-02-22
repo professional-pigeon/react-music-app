@@ -22,5 +22,15 @@
 
 .instrument-form {
   display: flex;
-  
+}
+
+.presets {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.tools > form {
+  display: flex;
+  flex-direction: column;
 }
