@@ -47,8 +47,11 @@ class SoundControl extends React.Component {
 
   addPreset = (arr) => {
     let newPresets = this.state.presets
-    let key = parseInt(Object.keys(this.state.presets).pop()) + 1
-    newPresets[key] = arr
+    if (Object.keys(newPresets).length !== 0) {
+      newPresets[(parseInt(Object.keys(this.state.presets).pop()) + 1)] = arr
+    } else {
+      newPresets[1] = arr
+    }
     this.setState({presets: newPresets})
   }
 
