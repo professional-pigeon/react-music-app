@@ -4,9 +4,14 @@ import { Button } from 'react-bootstrap'
 
 function Presets(props) {
 
-  console.log(props.presets[1])
+  const keys = Object.keys(props.presets).map(num => 
+    <Button key={num} onClick={() => props.setPreset(num)}>{num}</Button>
+    )
+
   return (
-    <Button onClick={() => props.setPreset(1)}></Button>
+    <>
+    {keys}
+    </>
   )
 }
 
