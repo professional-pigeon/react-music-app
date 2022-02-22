@@ -34,7 +34,7 @@
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
-  background-color: var(--color-two);
+  background-color: var(--muted-one);
 }
 
 .closeIcon {
@@ -43,7 +43,7 @@
   position: fixed;
   right: calc(15% - 30px);
   top: calc(100vh - 85vh - 33px);
-  background: var(--color-one);
+  background: var(--muted-one);
   width: 25px;
   height: 25px;
   border-radius: 50%;
