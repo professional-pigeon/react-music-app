@@ -7,6 +7,7 @@ function LoopControls(props) {
   
   return (
       <div className="loop-controls">
+        <h3>Controls</h3>
         {displayButton}
         <Button variant="warning" onClick={()=> props.resetLoop()}>Reset Loop</Button>
       </div>

@@ -23,6 +23,7 @@
 
 .instrument-form {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .presets {
@@ -39,11 +40,10 @@
   margin: 5px;
 }
 
-.tools > form, .tempo-form, .tempo-form > form{
+.tools > form, .tempo-form, .tempo-form > form, .loop-controls {
   display: flex;
   flex-direction: column;
 }
-
 
 .player {
   display: flex;
