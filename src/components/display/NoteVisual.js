@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { Row, Col, Button } from 'react-bootstrap';
-import './../../App.css';
 
 function NoteVisual(props) {
 
@@ -19,20 +18,20 @@ function NoteVisual(props) {
 
   function createRows(instruments, arrayOfNotes) {
     let rowArray = []
-    instruments.forEach(function(instrument) {
+    instruments.forEach(function(instrument, key) {
       if (instrument.length > 3) {
         let colArray = []
         for (let i = 0; i < arrayOfNotes.length; i++) {
           let checkArray = arrayOfNotes[i]
           if (checkArray.includes(instrument)) {
-            colArray.push(<Col sm="auto"><Button variant="primary" className="selected" onClick={() => props.removeInstrument(instrument, i)}></Button></Col>)
+            colArray.push(<Col sm="auto" key={key + i}><Button variant="primary" className="selected" onClick={() => props.removeInstrument(instrument, i)}></Button></Col>)
           } else {
-            colArray.push(<Col sm="auto"><Button variant="warning" className="unselected" onClick={() => props.addInstrument(instrument, i)}></Button></Col>)
+            colArray.push(<Col sm="auto" key={key + i}><Button variant="warning" className="unselected" onClick={() => props.addInstrument(instrument, i)}></Button></Col>)
           }
         }
         rowArray.push(
-          <Row className="gutter" id="instrument" xs="auto">
-            <Col xs={1} className="LeftMostCol">{instrument}</Col>
+          <Row className="gutter" id="instrument" xs="auto" key={key}>
+            <Col xs={1} className="LeftMostCol" key="instrument">{instrument}</Col>
             {colArray}
           </Row>
         )

@@ -14,3 +14,13 @@
   border-style: solid;
   height: fit-content;
 }
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+}
+
+.instrument-form {
+  display: flex;
+  
+}

@@ -14,7 +14,7 @@ function InstrumentForm(props) {
   function addBeats(ticks) {
     let beatArray = []
     for (let b = 1; b <= ticks; b++) {
-      beatArray.push(<option value={String(b)}>{b}</option>)
+      beatArray.push(<option value={String(b)} key={b}>{b}</option>)
     }
     return beatArray
   }
@@ -23,30 +23,21 @@ function InstrumentForm(props) {
 
   function addSounds(sounds) {
     let soundArray = []
-    sounds.forEach(element => soundArray.push(<option value={element}>{element}</option>))
+    sounds.forEach((element, key) => soundArray.push(<option value={element} key={key}>{element}</option>))
     return soundArray
   }
 
 return (
-    <Form onSubmit={handleInstrumentAdd}>
-      <Row>
-        <Col>
+    <Form onSubmit={handleInstrumentAdd} className='instrument-form'>
           <Form.Label>Add drum noise:</Form.Label>
-        </Col>
-        <Col>
           <Form.Select name="instrument">
             {addSounds(sounds)}
           </Form.Select>
-        </Col>
-        <Col>
+          <Form.Label>Select beat:</Form.Label>
           <Form.Select name="beat">
               {addBeats(props.playInstrument.length)}
           </Form.Select>
-        </Col>
-        <Col>
           <Button variant="primary" type="submit">Add to loop</Button>
-        </Col>
-      </Row>
     </Form>
   )
 }
