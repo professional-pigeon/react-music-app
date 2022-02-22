@@ -105,7 +105,7 @@ class SoundControl extends React.Component {
             addInstrument={this.addInstrumentToSpace}
             drums={drumMachine}
           />
-            <Presets presets={this.state.presets} />
+            <Presets presets={this.state.presets} setPreset={this.setPreset} />
       </div>
         <Player
           useTempo={useTempo} 
