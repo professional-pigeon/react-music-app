@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 function Player(props) {
 
@@ -14,13 +14,17 @@ function Player(props) {
   
   return (
     <div className='sub-main player'>
-      <p>Current Tempo: {props.useTempo} BPM</p>
-      <form onSubmit={handleTempoChange}>
-        <label>Set Tempo:</label>
-        <input type="number" name="tempo" defaultValue={parseInt(props.useTempo)} />
-        <Button type="submit">Change Tempo</Button>
-      </form>
-      {displayButton}
+      <div className="tempo-form">
+        <p>Current Tempo: {props.useTempo} BPM</p>
+        <form onSubmit={handleTempoChange}>
+          <label>Set Tempo:</label>
+          <input type="number" name="tempo" defaultValue={parseInt(props.useTempo)} />
+          <Button type="submit">Change Tempo</Button>
+        </form>
+      </div>
+      <div>
+        {displayButton}
+      </div>
     </div>
   )
 }

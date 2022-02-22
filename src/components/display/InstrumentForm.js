@@ -29,15 +29,15 @@ function InstrumentForm(props) {
 
 return (
     <Form onSubmit={handleInstrumentAdd} className='instrument-form'>
-          <Form.Label>Add drum noise:</Form.Label>
-          <Form.Select name="instrument">
-            {addSounds(sounds)}
-          </Form.Select>
-          <Form.Label>Select beat:</Form.Label>
-          <Form.Select name="beat">
-              {addBeats(props.playInstrument.length)}
-          </Form.Select>
-          <Button variant="primary" type="submit">Add to loop</Button>
+      <Form.Label>Add drum noise:</Form.Label>
+      <Form.Select name="instrument">
+        {addSounds(sounds)}
+      </Form.Select>
+      <Form.Label>Select beat:</Form.Label>
+      <Form.Select name="beat">
+        {addBeats(props.playInstrument.length)}
+      </Form.Select>
+      <Button variant="primary" type="submit">Add to loop</Button>
     </Form>
   )
 }

@@ -43,3 +43,14 @@
   display: flex;
   flex-direction: column;
 }
+.tempo-player > form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.player {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}

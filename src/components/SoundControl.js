@@ -104,17 +104,17 @@ class SoundControl extends React.Component {
     this.setState({ instrument: [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]] })
   }
 
-  addBeat = () => {
-    let newState = this.state.instrument
-    newState.push([], [], [], [])
-    this.setState({ instrument: newState})
-  }
+  // addBeat = () => {
+  //   let newState = this.state.instrument
+  //   newState.push([], [], [], [])
+  //   this.setState({ instrument: newState})
+  // }
 
-  addBar = () => {
-      let newState = this.state.instrument
-      newState.push([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [])
-      this.setState({ instrument: newState})
-  }
+  // addBar = () => {
+  //     let newState = this.state.instrument
+  //     newState.push([], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [])
+  //     this.setState({ instrument: newState})
+  // }
 
   render() {
     let useTempo = this.state.tempo
@@ -122,14 +122,14 @@ class SoundControl extends React.Component {
     return (
     <React.Fragment>
       <div id="buttonRow" className='sub-main tools'>
-            <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
-            <InstrumentForm 
-            handleChange={this.handleChange}
-            playInstrument={playInstrument}
-            addInstrument={this.addInstrumentToSpace}
-            drums={drumMachine}
-          />
-          <Presets updatePreset={this.updatePreset} presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
+        <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
+        <InstrumentForm 
+          handleChange={this.handleChange}
+          playInstrument={playInstrument}
+          addInstrument={this.addInstrumentToSpace}
+          drums={drumMachine}
+        />
+        <Presets updatePreset={this.updatePreset} presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
       </div>
         <Player
           useTempo={useTempo} 
