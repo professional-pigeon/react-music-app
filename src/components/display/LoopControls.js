@@ -8,6 +8,7 @@ function LoopControls(props) {
   return (
       <div className="loop-controls">
         {displayButton}
+        <Button variant="warning" onClick={()=> props.resetLoop()}>Reset Loop</Button>
       </div>
   )
 }
@@ -16,6 +17,7 @@ LoopControls.propTypes ={
   sounds: PropTypes.object,
   play: PropTypes.func,
   stop: PropTypes.func,
+  resetLoop: PropTypes.func,
   intervalID: PropTypes.array,
   playInstrument: PropTypes.array,
   }

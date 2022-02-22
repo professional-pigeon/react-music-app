@@ -124,7 +124,6 @@ class SoundControl extends React.Component {
     return (
     <React.Fragment>
       <div id="buttonRow" className='sub-main tools'>
-        <Button variant="warning" onClick={()=> this.resetLoop()}>Reset Loop</Button>
         <InstrumentForm 
           handleChange={this.handleChange}
           playInstrument={playInstrument}
@@ -140,6 +139,7 @@ class SoundControl extends React.Component {
           stop={this.clearTheInterval}
           intervalID={this.state.intervalID}
           playInstrument={playInstrument}
+          resetLoop={this.resetLoop}
         />
         <Tempo useTempo={useTempo} setNewTempo={this.setTempo} />
         </div>
