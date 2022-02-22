@@ -1,10 +1,18 @@
 .navStyle {
-  background-color: var(--color-four);
+  background-color: var(--color-three);
   margin-bottom: 20px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   border-radius: 0px 0px 5px 5px;
 }
+
+/* .nav-link {
+  color: var(--color-two) !important;
+}
+
+.navbar-brand {
+  color: var(--color-two) !important;
+} */
 
 .popUpBox {
   position: fixed;
@@ -26,7 +34,7 @@
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
-  background-color: var(--color-one);
+  background-color: var(--color-two);
 }
 
 .closeIcon {
