@@ -7,6 +7,7 @@ import NoteVisual from './display/NoteVisual';
 import Presets from './display/Presets';
 import Tempo from './display/Tempo'
 import { Button } from 'react-bootstrap';
+import LoopControls from './display/LoopControls';
 
 let soundObjects = SoundLibrary()
 let drumMachine = soundObjects.drumMachine
@@ -133,7 +134,7 @@ class SoundControl extends React.Component {
         <Presets updatePreset={this.updatePreset} presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
       </div>
       <div className='sub-main player'>
-        <Player
+        <LoopControls
           sounds={drumMachine}
           play={this.setIntervalIDandPlay}
           stop={this.clearTheInterval}
