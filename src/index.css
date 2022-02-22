@@ -20,6 +20,21 @@ code {
   --color-three: rgb(224, 87, 160);
   --color-four: rgb(65, 120, 171);
   --color-five: rgb(52, 82, 93);
+  --light-one: rgb(249, 248, 239);
+  --light-two: rgb(255, 232, 214);
+  --light-three: rgb(244, 207, 226);
+  --light-four: rgb(196, 206, 225);
+  --light-five: rgb(182, 186, 192);
+  --muted-one: rgb(227, 222, 210);
+  --muted-two: rgb(209, 177, 155);
+  --muted-three: rgb(186, 130, 151);
+  --muted-four: rgb(124, 129, 147);
+  --muted-five: rgb(75, 78, 80);
+  --dark-one: rgb(139, 140, 124);
+  --dark-two: rgb(145, 106, 72);
+  --dark-three: rgb(134, 44, 95);
+  --dark-four: rgb(33, 70, 103);
+  --dark-five: rgb(75, 78, 56);
   /* derived from pg 136 of color theory book */
 }
 
