@@ -20,7 +20,7 @@ class SoundControl extends React.Component {
       instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']],
       chosenBeat: 0,
       displayInstructions: false,
-      presets: { 1: { name: 'starting', preset: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']] }}
+      presets: { 1: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']]}
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -38,6 +38,10 @@ class SoundControl extends React.Component {
   setTempo = (number) => {
     let newTempo = number
     this.setState({ tempo: newTempo })
+  }
+
+  setPreset = (key) => {
+    this.setState({instrument: this.state.presets[key]})
   }
 
   addInstrumentToSpace = (newInstrument, location) => {

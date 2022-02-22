@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 function Presets(props) {
 
-  console.log(props.presets)
+  console.log(props.presets[1])
   return (
-    <p>hi</p>
+    <Button></Button>
   )
 }
 
