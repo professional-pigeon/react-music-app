@@ -10,13 +10,14 @@ function Presets(props) {
 
   return (
     <div className="presets">
+      <h3>Presets</h3>
       <div id="preset-buttons">
-        <h4>Presets</h4>
           {keys}
-        </div>
+      </div>
       <div id="preset-add-delete">
         <Button onClick={() => props.addPreset(props.instruments)}>Add New</Button>
         <Button onClick={() => props.deletePreset(props.currentPreset)}>Delete {props.currentPreset}</Button>
+        <Button onClick={() => props.updatePreset(props.instruments, props.currentPreset)}>update {props.currentPreset}</Button>
       </div>
     </div>
   )
@@ -28,6 +29,7 @@ Presets.propTypes = {
   addPreset: PropTypes.func,
   deletePreset: PropTypes.func,
   currentPreset: PropTypes.number,
+  updatePreset: PropTypes.func,
   instruments: PropTypes.array,
 }
 

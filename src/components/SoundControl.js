@@ -58,6 +58,13 @@ class SoundControl extends React.Component {
     this.setState({presets: newPresets})
   }
 
+  updatePreset = (arr, key) => {
+    let newPresets = this.state.presets
+    delete newPresets[key]
+    newPresets[key] = arr
+    this.setState({presets: newPresets})
+  }
+
   addInstrumentToSpace = (newInstrument, location) => {
     let instArray = this.state.instrument
     if (instArray[location][0] === undefined) {
@@ -119,7 +126,7 @@ class SoundControl extends React.Component {
             addInstrument={this.addInstrumentToSpace}
             drums={drumMachine}
           />
-          <Presets presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
+          <Presets updatePreset={this.updatePreset} presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
       </div>
         <Player
           useTempo={useTempo} 
