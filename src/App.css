@@ -17,7 +17,8 @@
 
 .tools {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 .instrument-form {
@@ -25,9 +26,16 @@
 }
 
 .presets {
+  border: solid black;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: auto;
+  max-width: 30%;
+}
+
+#preset-buttons > button {
+  margin: 5px;
 }
 
 .tools > form {
