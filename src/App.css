@@ -39,11 +39,7 @@
   margin: 5px;
 }
 
-.tools > form {
-  display: flex;
-  flex-direction: column;
-}
-.tempo-player > form {
+.tools > form, .tempo-form, .tempo-form > form{
   display: flex;
   flex-direction: column;
 }
