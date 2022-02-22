@@ -1,6 +1,5 @@
 import React from 'react';
 import SoundLibrary from './sound_logic/SoundLibrary';
-import Player from './display/Player';
 import InstrumentForm from './display/InstrumentForm';
 import SetPlayInterval from './sound_logic/SetPlayInterval';
 import NoteVisual from './display/NoteVisual';
@@ -134,6 +133,7 @@ class SoundControl extends React.Component {
       </div>
       <div className='sub-main player'>
         <LoopControls
+          useTempo={useTempo}
           sounds={drumMachine}
           play={this.setIntervalIDandPlay}
           stop={this.clearTheInterval}

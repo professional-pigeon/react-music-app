@@ -14,6 +14,7 @@ function LoopControls(props) {
 }
 
 LoopControls.propTypes ={
+  useTempo: PropTypes.number,
   sounds: PropTypes.object,
   play: PropTypes.func,
   stop: PropTypes.func,
