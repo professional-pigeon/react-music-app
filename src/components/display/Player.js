@@ -13,7 +13,7 @@ function Player(props) {
   let displayButton = (props.intervalID[0] !== undefined ? <Button id="stop-icon" onClick={() => props.stop(props.intervalID)}>{"Stop"}</Button> : <Button id="play-icon" onClick={() => props.play(props.playInstrument, props.useTempo)}>Play</Button> )
   
   return (
-    <div style={{ borderStyle: 'solid', height: 'fit-content' }} id="buttonRow" className='sub-main player'>
+    <div className='sub-main player'>
       <p>Tempo in BPM: {props.useTempo}</p>
       <form onSubmit={handleTempoChange}>
         <label>Set Tempo:</label>

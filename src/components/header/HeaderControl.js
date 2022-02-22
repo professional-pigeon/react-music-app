@@ -11,7 +11,7 @@ function HeaderControl() {
     setPopUp(false)
   }
   return (
-  <div className='sub-main'>
+  <div className='header'>
     <Navbar className="navStyle">
       <Container>
         <Navbar.Brand>Drum Machine</Navbar.Brand>

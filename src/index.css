@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(var(--color-four), var(--color-three), var(--color-two));
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --color-one: rgb(238, 236, 206);
+  --color-two: rgb(249, 181, 124);
+  --color-three: rgb(224, 87, 160);
+  --color-four: rgb(65, 120, 171);
+  --color-five: rgb(52, 82, 93);
+  /* derived from pg 136 of color theory book */
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
 }
