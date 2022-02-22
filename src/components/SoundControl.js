@@ -20,7 +20,8 @@ class SoundControl extends React.Component {
       instrument: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']],
       chosenBeat: 0,
       displayInstructions: false,
-      presets: { 1: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']]}
+      presets: { 1: [['tom_low'],[],[],[],['clap'],['tom_low'],['cowbell'],[],['tom_low'],[],[],['cowbell'],['clap'],['cowbell'],[],['clap']]},
+      currentPreset: 1,
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -47,6 +48,12 @@ class SoundControl extends React.Component {
   addPreset = (arr) => {
     let newPresets = this.state.presets
     newPresets[Object.keys(this.state.presets).length + 1] = arr
+    this.setState({presets: newPresets})
+  }
+
+  deletePreset = (key) => {
+    let newPresets = this.state.presets
+    delete newPresets[key]
     this.setState({presets: newPresets})
   }
 
@@ -111,7 +118,7 @@ class SoundControl extends React.Component {
             addInstrument={this.addInstrumentToSpace}
             drums={drumMachine}
           />
-          <Presets presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} instruments={this.state.instrument}  />
+          <Presets presets={this.state.presets} setPreset={this.setPreset} addPreset={this.addPreset} deletePreset={this.deletePreset} instruments={this.state.instrument} currentPreset={this.state.currentPreset} />
       </div>
         <Player
           useTempo={useTempo} 

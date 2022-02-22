@@ -15,6 +15,7 @@ function Presets(props) {
           {keys}
         </div>
       <Button onClick={() => props.addPreset(props.instruments)}>add</Button>
+      <Button onClick={() => props.deletePreset(props.currentPreset)}>Delete {props.currentPreset}</Button>
     </div>
   )
 }
@@ -23,6 +24,8 @@ Presets.propTypes = {
   presets: PropTypes.object,
   setPreset: PropTypes.func,
   addPreset: PropTypes.func,
+  deletePreset: PropTypes.func,
+  currentPreset: PropTypes.number,
   instruments: PropTypes.array,
 }
 
