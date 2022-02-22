@@ -13,7 +13,7 @@ function NoteVisual(props) {
         }
       })
     })
-    return createRows(instruments, arrayOfNotes)
+    return createRows(instruments.sort(), arrayOfNotes)
   }
 
   function createRows(instruments, arrayOfNotes) {
@@ -30,8 +30,8 @@ function NoteVisual(props) {
           }
         }
         rowArray.push(
-          <Row className="gutter" id="instrument" xs="auto" key={key}>
-            <Col xs={1} className="LeftMostCol" key="instrument">{instrument}</Col>
+          <Row className="gutter" id="instrument" xs="auto" key={instrument}>
+            <Col xs={1} key="instrument">{instrument}</Col>
             {colArray}
           </Row>
         )
