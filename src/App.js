@@ -7,9 +7,9 @@ import { Container } from 'react-bootstrap'
 
 function App() {
   return (
-    <div>
+    <div className='main'>
       <HeaderControl />
-      <div className='main'>
+      <div >
         <SoundControl />
       </div>
     </div>

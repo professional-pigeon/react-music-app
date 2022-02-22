@@ -22,3 +22,5 @@ function Instructions({ close }) {
 }
 
 export default Instructions
+
+// margin = 20px border = padding = 16px line-height = 24px 

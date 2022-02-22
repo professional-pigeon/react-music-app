@@ -11,7 +11,7 @@ function HeaderControl() {
     setPopUp(false)
   }
   return (
-    <div>
+  <div className='sub-main'>
     <Navbar className="navStyle">
       <Container>
         <Navbar.Brand>Drum Machine</Navbar.Brand>
@@ -30,7 +30,7 @@ function HeaderControl() {
       </Container>
     </Navbar>
     { popUp && <Instructions close={closePopUp} /> }
-    </div>
+  </div>
   )
 }
 
