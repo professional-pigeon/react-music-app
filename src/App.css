@@ -50,3 +50,19 @@
   justify-content: space-evenly;
   text-align: center;
 }
+
+#instrument-row {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap;
+}
+
+#instrument-name {
+  border: solid black;
+  min-width: auto;
+  width: 10%;
+}
+
+#inner-div {
+  margin: 0 10px 0 10px;
+}
