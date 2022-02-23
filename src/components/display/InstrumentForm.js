@@ -29,6 +29,7 @@ function InstrumentForm(props) {
 
 return (
     <Form onSubmit={handleInstrumentAdd} className='instrument-form'>
+    <h3>Add Instrument</h3>
       <Form.Label>Add drum noise:</Form.Label>
       <Form.Select name="instrument">
         {addSounds(sounds)}

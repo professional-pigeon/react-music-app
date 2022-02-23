@@ -12,6 +12,7 @@ function Tempo(props) {
 
   return (
     <div className="tempo-form">
+      <h3>Tempo Controls</h3>
       <p>Current Tempo: {props.useTempo} BPM</p>
       <form onSubmit={handleTempoChange}>
         <label>Set Tempo:</label>

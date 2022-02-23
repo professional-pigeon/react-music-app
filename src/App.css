@@ -11,7 +11,6 @@
 .sub-main {
   padding: 20px;
   width: 100%;
-  border-style: solid;
   height: fit-content;
 }
 
@@ -23,16 +22,17 @@
 
 .instrument-form {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  width: 30%;
 }
 
 .presets {
-  border: solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: auto;
+  width: 30%;
   max-width: 30%;
 }
 
@@ -43,6 +43,14 @@
 .tools > form, .tempo-form, .tempo-form > form, .loop-controls {
   display: flex;
   flex-direction: column;
+}
+
+.tempo-form, .loop-controls {
+  width: 30%;
+}
+
+.loop-controls {
+  align-content: space-between;
 }
 
 .player {
