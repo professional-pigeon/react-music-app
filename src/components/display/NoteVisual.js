@@ -46,9 +46,9 @@ function NoteVisual(props) {
       for (let i = 1; i < 17; i++) {
         let checkArray = arrayOfNotes[i - 1]
         if (checkArray.includes(instrument)) {
-          buttonSequence.push(<Button key={i} variant="primary" className="selected" onClick={() => props.removeInstrument(instrument, i - 1)}></Button>)
+          buttonSequence.push(<Button key={i} variant="primary" id="selected" onClick={() => props.removeInstrument(instrument, i - 1)}>{i}</Button>)
         } else {
-          buttonSequence.push(<Button key={i} variant="warning" className="unselected" onClick={() => props.addInstrument(instrument, i - 1)}></Button>)
+          buttonSequence.push(<Button key={i} variant="warning" id="unselected" onClick={() => props.addInstrument(instrument, i - 1)}>{i}</Button>)
         }
         if (i % 4 === 0) {
           innerDivArray.push(<div id='inner-div' key={i + "bar"}>{buttonSequence}</div>)
@@ -66,7 +66,7 @@ function NoteVisual(props) {
   }
 
 return (
-  <div id="buttonRow" className='sub-main notes'>
+  <div className='sub-main notes'>
     {createInstrumentList(props.playInstrument)}
   </div>
 )
