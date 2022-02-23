@@ -54,22 +54,34 @@
 #instrument-row {
   display: flex;
   flex-wrap: wrap;
+  margin: 5px 0 5px 0;
 }
 
 #instrument-name {
   border: solid black;
-  min-width: auto;
   width: 10%;
   font-size: 1.5em
 }
 
-#inner-div, #inner-div > button {
+#inner-div {
   margin: 0 5px 0 5px;
   display: flex;
   justify-content: space-between;
 }
 
-/* #selected, #unselected {
-  width: 25px;
-  height: 25px;
-} */
+#inner-div > button {
+  margin: 0 5px 0 5px;
+}
+
+@media screen and (max-width: 600px) {
+  #instrument-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #inner-div {
+    margin: 0 5px 0 5px;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
